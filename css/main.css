@@ -1,0 +1,44 @@
+body{
+    background-color: aliceblue;
+    margin: auto;
+    padding: 10px;
+}
+
+.mainSection{
+    border-color: azure;
+    width: 900px;
+    margin: 0 auto;
+    background-color: #ddd;
+    padding: 5px;
+}
+
+.header, .footer{
+    text-align: center;
+    color: black;
+    background-color: white;
+}
+
+.header h2{
+    margin: 0px;
+    margin-bottom:5px;
+    padding-bottom: 10px;
+}
+
+.footer h4,p{
+    margin: 0px;
+    padding: 0px;
+}
+
+.phpCodeSection{
+    min-height: 300px;
+    padding: 20px;
+    text-align: center;
+}
+
+img{
+    width: 98%;
+    height: 200px;
+    padding: 5px;
+    position: relative;
+    margin: 0px;
+}
