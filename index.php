@@ -16,7 +16,7 @@
     
     <div class="mainSection">
         <div class="header">
-            <img src="slideShowImage/1.jpg" alt="demoImage">
+            <img src="slideShowImage/index.jpg" alt="demoImage">
             <h2>STUDENT'S CLASS ATTENDANCE MANAGEMENT SYSTEM</h2>
         </div>
         
@@ -30,7 +30,12 @@
         <div class="footer">
             <h4>&copy SIR SOFT</h4>
             <p>Maintainance by: Saiful Islam Rasel</p>
-            <p>Server Time : <?php date_default_timezone_set("Asia/Dhaka");echo date("H:i:sa");?> </p>
+            <p>Server Time : 
+                <?php 
+                    date_default_timezone_set("Asia/Dhaka");
+                    echo date("H:i:sa");
+                ?> 
+            </p>
         </div>
     </div>
     
