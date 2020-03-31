@@ -29,11 +29,11 @@
                     </tr>
                     <tr>
                         <td>Student Name </td>
-                        <td><input type="text" name="instituteName"></td>
+                        <td><input type="text" name="instituteName" required></td>
                     </tr>
                     <tr>
                         <td>Institute code/id </td>
-                        <td><input type="text" name="instituteCode"></td>
+                        <td><input type="text" name="instituteCode" required></td>
                     </tr>
                     <tr>
                         <td>Student e-mail </td>
@@ -45,11 +45,11 @@
                     </tr>
                     <tr>
                         <td>Password </td>
-                        <td><input type="text" name="password"></td>
+                        <td><input type="text" name="password" required></td>
                     </tr>
                     <tr>
                         <td>Confirm Password </td>
-                        <td><input type="text" name="confirmPassword"></td>
+                        <td><input type="text" name="confirmPassword" required></td>
                     </tr>
                     <tr>
                         <th colspan = "2"><input type="submit" name="submit" value="REGISTER"></th>

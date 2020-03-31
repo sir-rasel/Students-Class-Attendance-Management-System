@@ -29,15 +29,15 @@
                     </tr>
                     <tr>
                         <td>Teacher Name </td>
-                        <td><input type="text" name="instituteName"></td>
+                        <td><input type="text" name="instituteName" required></td>
                     </tr>
                     <tr>
                         <td>Institute code/id </td>
-                        <td><input type="text" name="instituteCode"></td>
+                        <td><input type="text" name="instituteCode" required></td>
                     </tr>
                     <tr>
                         <td>Password </td>
-                        <td><input type="text" name="password"></td>
+                        <td><input type="text" name="password" required></td>
                     </tr>
                     <tr>
                         <th colspan = "2"><input type="submit" name="submit" value="LOG IN"></th>

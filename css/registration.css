@@ -11,12 +11,12 @@ table{
     padding: 5px;
     text-align: left;
     border-collapse: collapse;
-    align = "center";
 }
 
 td{
     padding: 5px;
 }
+
 
 th{
     text-align: center;
