@@ -2,7 +2,8 @@
     if($_SERVER["REQUEST_METHOD"]=="POST"){
         include "../inc/databaseConnection.php";
         include "../inc/formValidation.php";
-        
+        include "../inc/insertIntoLoginDatabase.php";
+        include "../inc/insertIntoInfoTable.php";
         
         $instituteName = validateFormData($_POST["instituteName"]);
         $instituteCode = validateFormData($_POST["instituteCode"]);
@@ -13,18 +14,39 @@
         
         if($password==$confirmPassword){
             $database = "db".$instituteCode;
+            $col = "institute";
+            $flag = true;
+            
             $sql = "create database if not exists $database";
-    
-            if ($conn->query($sql) === TRUE) {
+            if ($conn->query($sql) !== TRUE) $flag=false;
+            $sql = "use $database";
+            if ($conn->query($sql) !== TRUE) $flag=false;
+            
+            $sql = "create table if not exists institute_info(
+                        instituteName varchar(100) not null,
+                        instituteCode varchar(30) not null primary key,
+                        instituteEmail varchar(100),
+                        instituteMobile varchar(20)
+                    )";
+            if ($conn->query($sql) !== TRUE) $flag=false;
+        
+            $table = "institute_info";
+            $flag = insertIntoInfoTable($conn,$flag,$table,$col,$instituteName,$instituteCode,$instituteEmail,$instituteMobile);   
+            
+            $table = "institute_login";
+            $flag = insertIntoLoginDatabase($conn,$flag,$table,$col,$instituteName,$instituteCode,$password);
+                
+            if($flag==true){
                 $conn->close();
                 echo "<script>alert('Successfully Register');";
                 echo "window.location.href='../index.php';</script>";
                 die();
-            } 
+            }
             else {
                 echo "Error creating database: " . $conn->error;
                 $conn->close();
             }
+            
         }
         else{
             echo "<script>alert('Password mis-match, try again');";
