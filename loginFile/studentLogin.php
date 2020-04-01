@@ -10,14 +10,14 @@
     <meta http-equiv="refresh" content="60">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/registration.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/registration.css">
 </head>
 <body>
     
     <div class="mainSection">
         <div class="header">
-            <img src="slideShowImage/login.png" alt="demoImage">
+            <img src="../slideShowImage/login.png" alt="demoImage">
             <h2>STUDENT'S CLASS ATTENDANCE MANAGEMENT SYSTEM</h2>
         </div>
         
@@ -25,10 +25,10 @@
             <form action="#" method="post">
                 <table align = "center">
                     <tr>
-                        <th colspan = "2">Teacher Login Form</th>
+                        <th colspan = "2">Student Login Form</th>
                     </tr>
                     <tr>
-                        <td>Teacher Name </td>
+                        <td>Student Name </td>
                         <td><input type="text" name="instituteName" required></td>
                     </tr>
                     <tr>

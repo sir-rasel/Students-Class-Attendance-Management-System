@@ -11,6 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/button.css">
 </head>
 <body>
     
@@ -20,10 +21,12 @@
             <h2>STUDENT'S CLASS ATTENDANCE MANAGEMENT SYSTEM</h2>
         </div>
         
-        <div class="phpCodeSection">
-            <?php 
-                include "home.php";
-            ?>
+        <div class="contentSection">
+            <h3>Welcome to our "Student's Class Attendance Management System".</h3>
+            <a href="loginFile/loginView.php">LOG IN / SIGN IN</a>
+            <br/><br/>
+            <a href="registerFile/registerView.php">REGISTER / SIGN UP</a>
+            <h3>Thanks for using our service.</h3>
         </div>
         
     

@@ -10,14 +10,14 @@
     <meta http-equiv="refresh" content="60">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/registration.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/registration.css">
 </head>
 <body>
     
     <div class="mainSection">
         <div class="header">
-            <img src="slideShowImage/register.jpg" alt="demoImage">
+            <img src="../slideShowImage/login.png" alt="demoImage">
             <h2>STUDENT'S CLASS ATTENDANCE MANAGEMENT SYSTEM</h2>
         </div>
         
@@ -25,10 +25,10 @@
             <form action="#" method="post">
                 <table align = "center">
                     <tr>
-                        <th colspan = "2">Student Registration Form</th>
+                        <th colspan = "2">Teacher Login Form</th>
                     </tr>
                     <tr>
-                        <td>Student Name </td>
+                        <td>Teacher Name </td>
                         <td><input type="text" name="instituteName" required></td>
                     </tr>
                     <tr>
@@ -36,23 +36,11 @@
                         <td><input type="text" name="instituteCode" required></td>
                     </tr>
                     <tr>
-                        <td>Student e-mail </td>
-                        <td><input type="email" name="instituteEmail"></td>
-                    </tr>
-                    <tr>
-                        <td>Student mobile </td>
-                        <td><input type="text" name="instituteMobile"></td>
-                    </tr>
-                    <tr>
                         <td>Password </td>
                         <td><input type="text" name="password" required></td>
                     </tr>
                     <tr>
-                        <td>Confirm Password </td>
-                        <td><input type="text" name="confirmPassword" required></td>
-                    </tr>
-                    <tr>
-                        <th colspan = "2"><input type="submit" name="submit" value="REGISTER"></th>
+                        <th colspan = "2"><input type="submit" name="submit" value="LOG IN"></th>
                     </tr>
                 </table>
             </form>

@@ -10,22 +10,25 @@
     <meta http-equiv="refresh" content="60">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/button.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/button.css">
 </head>
 <body>
     
     <div class="mainSection">
         <div class="header">
-            <img src="slideShowImage/register.jpg" alt="demoImage">
+            <img src="../slideShowImage/login.png" alt="demoImage">
             <h2>STUDENT'S CLASS ATTENDANCE MANAGEMENT SYSTEM</h2>
         </div>
         
-        <div class="phpCodeSection">
-            <a href="instituteRegister.php">Institute Register</a>
+        <div class="contentSection">
+            <a href="instituteLogin.php">Institute Log in</a>
             <br/><br/>
-            <a href="studentRegister.php">Student Register</a>
+            <a href="teacherLogin.php">Teacher Log in</a>
+            <br/><br/>
+            <a href="studentLogin.php">Student Log in</a>
         </div>
+        
     
         <div class="footer">
             <h4>&copy SIR SOFT</h4>
