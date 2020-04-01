@@ -22,7 +22,7 @@
         </div>
         
         <div class="registerForm">
-            <form action="#" method="post">
+            <form action="completeInstituteLogin.php" method="post">
                 <table align = "center">
                     <tr>
                         <th colspan = "2">Institute Login Form</th>
