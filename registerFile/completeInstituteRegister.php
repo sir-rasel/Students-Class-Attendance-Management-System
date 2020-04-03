@@ -34,7 +34,7 @@
             $flag = insertIntoInfoTable($conn,$flag,$table,$col,$instituteName,$instituteCode,$instituteEmail,$instituteMobile);   
             
             $table = "institute_login";
-            $flag = insertIntoLoginDatabase($conn,$flag,$table,$col,$instituteName,$instituteCode,$password);
+            $flag = insertIntoInstituteLogin($conn,$flag,$table,$instituteName,$instituteCode,$password);
                 
             if($flag==true){
                 $conn->close();
