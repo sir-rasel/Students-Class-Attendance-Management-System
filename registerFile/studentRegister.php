@@ -29,7 +29,7 @@
                     </tr>
                     <tr>
                         <td>Student Name </td>
-                        <td><input type="text" name="instituteName" required></td>
+                        <td><input type="text" name="studentName" required></td>
                     </tr>
                     <tr>
                         <td>Institute code/id </td>
@@ -37,11 +37,15 @@
                     </tr>
                     <tr>
                         <td>Student e-mail </td>
-                        <td><input type="email" name="instituteEmail"></td>
+                        <td><input type="email" name="studentEmail"></td>
                     </tr>
                     <tr>
                         <td>Student mobile </td>
-                        <td><input type="text" name="instituteMobile"></td>
+                        <td><input type="text" name="studentMobile"></td>
+                    </tr>
+                    <tr>
+                        <td>UserID </td>
+                        <td><input type="text" name="userId" required></td>
                     </tr>
                     <tr>
                         <td>Password </td>

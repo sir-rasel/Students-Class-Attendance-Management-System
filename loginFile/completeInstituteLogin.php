@@ -11,7 +11,7 @@
         $database = "login_info";
         $table = "institute_login";
             
-        $flag = checkLoginStatus($conn,$database,$table,$instituteCode,$password);
+        $flag = checkInstituteLoginStatus($conn,$database,$table,$instituteCode,$password);
                
         if($flag == 1){
              $conn->close();

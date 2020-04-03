@@ -28,8 +28,8 @@
                         <th colspan = "2">Teacher Login Form</th>
                     </tr>
                     <tr>
-                        <td>Teacher Name </td>
-                        <td><input type="text" name="instituteName" required></td>
+                        <td>UserID</td>
+                        <td><input type="text" name="userID" required></td>
                     </tr>
                     <tr>
                         <td>Institute code/id </td>
