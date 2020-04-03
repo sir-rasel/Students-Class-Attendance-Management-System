@@ -22,11 +22,11 @@
         else return 2;
     }
 
-    function checkUserLoginStatus($conn,$database,$table,$userId,$password){
+    function checkUserLoginStatus($conn,$database,$table,$userId,$instituteCode,$password){
         $sql = "use $database";
         if ($conn->query($sql) !== TRUE) return -1;
         
-        $sql = "select password from $table where InstituteCode=$instituteCode";
+        $sql = "select password from $table where InstituteCode='$instituteCode' and userId='$userId'";
         
         $flag=false;
         $result=$conn->query($sql);

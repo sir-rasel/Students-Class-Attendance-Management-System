@@ -4,14 +4,14 @@
         include "../inc/formValidation.php";
         include "../inc/checkingLoginStatus.php";
         
-        $instituteName = validateFormData($_POST["instituteName"]);
+        $userId = validateFormData($_POST["userId"]);
         $instituteCode = validateFormData($_POST["instituteCode"]);
         $password = validateFormData($_POST["password"]);
        
         $database = "login_info";
-        $table = "institute_login";
+        $table = "student_login";
             
-        $flag = checkInstituteLoginStatus($conn,$database,$table,$instituteCode,$password);
+        $flag = checkUserLoginStatus($conn,$database,$table,$userId,$instituteCode,$password);
                
         if($flag == 1){
              $conn->close();
@@ -19,8 +19,8 @@
         }
         else if($flag == 2){
             $conn->close();
-            echo "<script>alert('Incorrect Password or Institute Code, try again');";
-            echo "window.location.href='instituteLogin.php';</script>";
+            echo "<script>alert('Incorrect Password or UserId or Institute Code, try again');";
+            echo "window.location.href='studentLogin.php';</script>";
             die();
         }
         else{
