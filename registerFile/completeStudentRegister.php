@@ -25,8 +25,11 @@
             
             if($flag==true){
                 $conn->close();
-                echo "<script>alert('Successfully Register');";
-                echo "window.location.href='../index.php';</script>";
+                echo "<script>alert('Successfully Register');</script>";
+                
+                session_start();
+                $_SESSION["studentStatus"]=true;
+                echo "<script>window.location.href='../homeFile/studentHome.php';</script>";
                 die();
             }
             else {

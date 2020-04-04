@@ -14,8 +14,13 @@
         $flag = checkUserLoginStatus($conn,$database,$table,$userId,$instituteCode,$password);
                
         if($flag == 1){
-             $conn->close();
-             echo "<script>window.location.href='../index.php';</script>";
+            $conn->close();
+            echo "<script>alert('Successfully Login');</script>";
+    
+            session_start();
+            $_SESSION["studentStatus"]=true;
+            echo "<script>window.location.href='../homeFile/studentHome.php';</script>";
+            die();
         }
         else if($flag == 2){
             $conn->close();

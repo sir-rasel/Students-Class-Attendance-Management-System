@@ -7,7 +7,7 @@
         
         $flag=false;
         $result=$conn->query($sql);
-        if(!result) return -1;
+        if(!$result) return -1;
         
         if($result->num_rows>0){
             while($row = $result->fetch_assoc()){
@@ -30,7 +30,7 @@
         
         $flag=false;
         $result=$conn->query($sql);
-        if(!result) return -1;
+        if(!$result) return -1;
         
         if($result->num_rows>0){
             while($row = $result->fetch_assoc()){
