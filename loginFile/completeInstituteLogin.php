@@ -15,7 +15,11 @@
                
         if($flag == 1){
              $conn->close();
-             echo "<script>window.location.href='../index.php';</script>";
+             echo "<script>alert('Successfully Login');</script>";
+    
+            session_start();
+            $_SESSION["instituteStatus"]=true;
+            echo "<script>window.location.href='../homeFile/instituteHome.php';</script>";
         }
         else if($flag == 2){
             $conn->close();

@@ -37,9 +37,11 @@
             $flag = insertIntoInstituteLogin($conn,$flag,$table,$instituteName,$instituteCode,$password);
                 
             if($flag==true){
-                $conn->close();
-                echo "<script>alert('Successfully Register');";
-                echo "window.location.href='../index.php';</script>";
+                echo "<script>alert('Successfully Register');</script>";
+    
+                session_start();
+                $_SESSION["instituteStatus"]=true;
+                echo "<script>window.location.href='../homeFile/instituteHome.php';</script>";
                 die();
             }
             else {
