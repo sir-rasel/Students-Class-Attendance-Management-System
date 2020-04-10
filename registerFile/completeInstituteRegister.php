@@ -37,6 +37,7 @@
             $flag = insertIntoInstituteLogin($conn,$flag,$table,$instituteName,$instituteCode,$password);
                 
             if($flag==true){
+                $conn->close();
                 echo "<script>alert('Successfully Register');</script>";
     
                 session_start();
