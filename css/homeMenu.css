@@ -1,0 +1,60 @@
+.mainSection{    
+    padding: 0px;
+    margin: 0 auto;
+}
+
+.contentSection{
+    padding-top: 10px;
+    margin: 0px;
+    min-height: 200px;
+}
+
+.view{
+    padding-left: 20px;
+    min-height: 20px;
+}
+
+.menuBar{
+    margin-left: 5px;
+    align-content: center;
+    text-align: center;
+}
+
+ul {
+    width: 846px;
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+    overflow: hidden;
+    background-color: red;
+}
+
+li {
+    float: left;
+    border-right: 1px solid white;
+}
+
+li:last-child {
+    border-right: none;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #111;
+}
+
+li a:active {
+    background-color: green;
+}
+
+.active{
+    background-color: green;
+    text-align: center;
+}
