@@ -1,8 +1,8 @@
 <?php
     session_start();
-    if($_SESSION["studentStatus"]!=true){
+    if($_SESSION["instituteStatus"]!=true){
         echo "<script>alert('Register or Log in first');";
-        echo "window.location.href='../loginFile/studentLogin.php';</script>";
+        echo "window.location.href='../loginFile/instituteLogin.php';</script>";
         die();
     }
 ?>
@@ -40,7 +40,7 @@
                     <li><a href="#">Teacher List</a></li>
                     <li><a href="#">Course List</a></li>
                     <li><a href="#">Semester Report</a></li>
-                    <li><a class="active" href="#">Logout</a></li>
+                    <li><a class="active" href="../inc/logout.php">Logout</a></li>
                 </ul>
             </div>
             

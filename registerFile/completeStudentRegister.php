@@ -29,6 +29,8 @@
                 
                 session_start();
                 $_SESSION["studentStatus"]=true;
+                $_SESSION["userId"]=$userId;
+                $_SESSION["instituteCode"]=$institueCode;
                 echo "<script>window.location.href='../homeFile/studentHome.php';</script>";
                 die();
             }

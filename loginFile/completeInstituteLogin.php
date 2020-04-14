@@ -19,6 +19,8 @@
     
             session_start();
             $_SESSION["instituteStatus"]=true;
+            $_SESSION["instituteCode"]=$instituteCode;
+            $_SESSION["instituteName"]=$instituteName;
             echo "<script>window.location.href='../homeFile/instituteHome.php';</script>";
         }
         else if($flag == 2){
