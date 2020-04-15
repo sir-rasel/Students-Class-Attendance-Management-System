@@ -35,21 +35,22 @@
              <div class="menuBar">
                 <ul>
                     <li><a href="#">Register Teacher</a></li>
+                    <li><a href="#">Assign Course to Teacher</a></li>
                     <li><a href="#">Entry Student</a></li>
                     <li><a href="#">Migrate Semester</a></li>
                     <li><a href="#">Teacher List</a></li>
                     <li><a href="#">Course List</a></li>
-                    <li><a href="#">Semester Report</a></li>
+                    <li><a href="#">Semester Overall Report</a></li>
                     <li><a class="active" href="../inc/logout.php">Logout</a></li>
                 </ul>
             </div>
             
             <div class="view">
-                <h1>CONTENT</h1>
-                <h1>CONTENT</h1>            
-                <h1>CONTENT</h1>            
-                <h1>CONTENT</h1>            
-                <h1>CONTENT</h1>            
+                <h1>WELCOME,</h1>
+                <?php
+                    $name = strtoupper($_SESSION["instituteName"]);
+                    echo "<h2 style = 'color:blue;'>$name</h2>";
+                ?>
             </div>
             
             

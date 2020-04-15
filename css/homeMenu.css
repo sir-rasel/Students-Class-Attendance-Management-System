@@ -11,17 +11,17 @@
 
 .view{
     padding-left: 20px;
-    min-height: 20px;
+    min-height: 150px;
 }
 
 .menuBar{
-    margin-left: 5px;
+    margin-left: 15px;
     align-content: center;
     text-align: center;
 }
 
 ul {
-    width: 846px;
+    width: 825px;
     list-style-type: none;
     margin: 0px;
     padding: 0px;
@@ -32,10 +32,13 @@ ul {
 li {
     float: left;
     border-right: 1px solid white;
+    border-bottom: 1px solid white;
 }
 
 li:last-child {
+    float: right;
     border-right: none;
+    border-bottom: 1px solid green;
 }
 
 li a {

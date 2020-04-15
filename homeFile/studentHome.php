@@ -41,15 +41,11 @@
             </div>
             
             <div class="view">
-                <h1>CONTENT</h1>
-                <h1>CONTENT</h1>
-                <h1>CONTENT</h1>
-                <h1>CONTENT</h1>
-                <h1>CONTENT</h1>
-                <h1>CONTENT</h1>
-                <h1>CONTENT</h1>
-                <h1>CONTENT</h1>
-            
+                <h1>WELCOME,</h1>
+                <?php
+                    $userId = strtoupper($_SESSION["userId"]);
+                    echo "<h2 style = 'color:blue;'>$userId</h2>";
+                ?>
             </div>
             
             
