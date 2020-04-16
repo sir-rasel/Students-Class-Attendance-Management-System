@@ -22,14 +22,14 @@
         </div>
         
         <div class="registerForm">
-            <form action="#" method="post">
+            <form action="completeTeacherLogin.php" method="post">
                 <table align = "center">
                     <tr>
                         <th colspan = "2">Teacher Login Form</th>
                     </tr>
                     <tr>
                         <td>UserID</td>
-                        <td><input type="text" name="userID" required></td>
+                        <td><input type="text" name="userId" required></td>
                     </tr>
                     <tr>
                         <td>Institute code/id </td>
