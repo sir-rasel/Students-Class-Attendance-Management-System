@@ -48,10 +48,11 @@
                 die();
             }
             else {
-                echo "Error creating database: " . $conn->error;
                 $conn->close();
+                echo "<script>alert('Institute already exist or error occured');</script>";
+                echo "<script>window.location.href='instituteRegister.php';</script>";
+                die();
             }
-            
         }
         else{
             echo "<script>alert('Password mis-match, try again');";

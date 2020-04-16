@@ -34,7 +34,7 @@
             
              <div class="menuBar">
                 <ul>
-                    <li><a href="#">Register Teacher</a></li>
+                    <li><a href="../registerFile/teacherRegister.php">Register Teacher</a></li>
                     <li><a href="#">Assign Course to Teacher</a></li>
                     <li><a href="#">Entry Student</a></li>
                     <li><a href="#">Migrate Semester</a></li>

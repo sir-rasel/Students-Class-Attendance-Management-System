@@ -23,6 +23,7 @@ create table register_student_info(
     userID varchar(100) not null primary key,
     instituteCode varchar(30) not null,
     studentName varchar(100) not null,
+    studentDepartment varchar(30) not null,
     studentEmail varchar (100),
     studentMobile varchar (100)
 );

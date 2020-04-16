@@ -10,14 +10,15 @@
         return $flag;
     }
 
-    function insertUserInfo ($conn,$flag,$table,$col,$id,$name,$code,$email,$mobile){
+    function insertUserInfo ($conn,$flag,$table,$col,$id,$name,$code,$dept,$email,$mobile){
         $colName = $col.'Name';
+        $colDept = $col.'Department';
         $colCode = "instituteCode";
         $userId = "userID";
         $colEmail = $col.'Email';
         $colMobile = $col.'Mobile';
         
-        $sql = "insert into $table($userId,$colName,$colCode,$colEmail,$colMobile) values ('$id', '$name','$code','$email','$mobile')";
+        $sql = "insert into $table($userId,$colName,$colCode,$colDept,$colEmail,$colMobile) values ('$id', '$name','$code','$dept','$email','$mobile')";
         if ($conn->query($sql) !== TRUE) $flag=false;
         return $flag;
     }

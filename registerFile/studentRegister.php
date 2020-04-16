@@ -32,6 +32,10 @@
                         <td><input type="text" name="studentName" required></td>
                     </tr>
                     <tr>
+                        <td>Student Department </td>
+                        <td><input type="text" name="studentDepartment" required></td>
+                    </tr>
+                    <tr>
                         <td>Institute code/id </td>
                         <td><input type="text" name="instituteCode" required></td>
                     </tr>

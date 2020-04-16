@@ -6,6 +6,7 @@
         include "../inc/insertIntoInfoTable.php";
         
         $studentName = validateFormData($_POST["studentName"]);
+        $studentDepartment = validateFormData($_POST["studentDepartment"]);
         $instituteCode = validateFormData($_POST["instituteCode"]);
         $studentEmail = validateFormData($_POST["studentEmail"]);
         $studentMobile = validateFormData($_POST["studentMobile"]);
@@ -21,7 +22,7 @@
             $flag = insertIntoUserLogin($conn,$flag,$table,$userId,$instituteCode,$password);
         
             $table = "register_student_info";
-            $flag = insertUserInfo($conn,$flag,$table,$col,$userId,$studentName,$instituteCode,$studentEmail,$studentMobile);   
+            $flag = insertUserInfo($conn,$flag,$table,$col,$userId,$studentName,$instituteCode,$studentDepartment,$studentEmail,$studentMobile);  
             
             if($flag==true){
                 $conn->close();
@@ -35,8 +36,10 @@
                 die();
             }
             else {
-                echo "Error creating database: " . $conn->error;
                 $conn->close();
+                echo "<script>alert('Username already exist or error occured');</script>";
+                echo "<script>window.location.href='studentRegister.php';</script>";
+                die();
             }
             
         }

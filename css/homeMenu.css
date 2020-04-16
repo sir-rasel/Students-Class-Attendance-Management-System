@@ -10,6 +10,7 @@
 }
 
 .view{
+    margin-top: 5px;
     padding-left: 20px;
     min-height: 150px;
 }
