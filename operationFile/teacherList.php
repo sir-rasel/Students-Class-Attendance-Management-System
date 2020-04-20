@@ -90,6 +90,13 @@
                         $conn->close();
                     }
                 ?>
+                
+                <table align = 'center' style="border:none">
+                    <tr>
+                        <th colspan="2" style="padding:0px"><a href="../registerFile/teacherRegister.php">ADD TEACHER</a></th>
+                    </tr>
+                </table>
+                
             </div>
             
             

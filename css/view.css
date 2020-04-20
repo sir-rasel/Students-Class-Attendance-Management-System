@@ -19,13 +19,19 @@ th{
     color: red;
 }
 
-input{
-    width: 250px;
+.view a{
+    display: inline-block;
+    color: white;
+    background-color: black;
+    text-align: center;
+    text-decoration: none;
 }
 
-th input{
-    width: 100px;
-    background-color: red;
-    font-weight: bold;
-    color: white;
+
+.view a:link, .view a:visited {
+  background-color: darkred;
+}
+
+.view a:hover, .view a:active {
+  background-color: red;
 }
