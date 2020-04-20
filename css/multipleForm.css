@@ -1,0 +1,35 @@
+.registerForm{
+    text-align: left;
+    border-color: aquamarine;
+    border-bottom-width: 5px;
+    padding: 10px;
+}
+table{
+    width: auto;
+    border: 1px solid black;
+    padding: 5px;
+    text-align: left;
+    border-collapse: collapse;
+}
+
+td{
+    padding: 5px;
+}
+
+th{
+    text-align: center;
+    border: 1px solid black;
+    padding: 2px;
+    color: red;
+}
+
+input{
+    width: 250px;
+}
+
+th input{
+    width: 100px;
+    background-color: red;
+    font-weight: bold;
+    color: white;
+}

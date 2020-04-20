@@ -39,8 +39,8 @@
                     <li><a href="#">Assign Course to Teacher</a></li>
                     <li><a href="#">Entry Student</a></li>
                     <li><a href="#">Migrate Semester</a></li>
-                    <li><a href="">Teacher List</a></li>
-                    <li><a href="courseList.php">Course List</a></li>
+                    <li><a href="teacherList.php">Teacher List</a></li>
+                    <li><a href="">Course List</a></li>
                     <li><a href="#">Semester Overall Report</a></li>
                     <li><a class="active" href="../inc/logout.php">Logout</a></li>
                 </ul>
@@ -54,7 +54,13 @@
                     $sql = "use $database;";
                     $conn->query($sql);
                 
-                    $sql = "select teacherName,teacherDepartment,teacherEmail from teacher_info order by teacherDepartment;";
+                    $sql = "create table if not exists course_info(
+                                courseName varchar(100) not null,
+                                courseCode varchar(30) not null primary key
+                            );";
+                    $conn->query($sql);
+                
+                    $sql = "select courseCode,courseName from course_info order by courseCode;";
                     $result = $conn->query($sql);
                 
                     if(!$result){
@@ -64,25 +70,23 @@
                         die();
                     }
                     else if($result->num_rows==0){
-                        echo "<h3>Empty List. No teacher available right now. Register teacher..</h3>";
+                        echo "<h3>Empty List. No Course available right now. Entry Course or assign to teacher..</h3>";
                         $conn->close();
                     }
                     else{
                         echo "<table align = 'center'>";
                         echo "<tr>
                                 <th>SI. NO:</th>
-                                <th>Teacher Name</th>
-                                <th>Teacher Department</th>
-                                <th>Teacher Email</th>
+                                <th>Course Name</th>
+                                <th>Course Code</th>
                             </tr>";
                         
                         $idx = 1;
                         while($row = $result->fetch_assoc()){
                             echo "<tr>
                                     <td>".$idx."</td>
-                                    <td>".$row["teacherName"]."</td>
-                                    <td>".$row["teacherDepartment"]."</td>
-                                    <td>".$row["teacherEmail"]."</td>
+                                    <td>".$row["courseName"]."</td>
+                                    <td>".$row["courseCode"]."</td>
                                 </tr>";
                             $idx++;
                         }
@@ -93,7 +97,7 @@
                 
                 <table align = 'center' style="border:none">
                     <tr>
-                        <th colspan="2" style="padding:0px"><a href="../registerFile/teacherRegister.php">ADD TEACHER</a></th>
+                        <th colspan="2" style="padding:0px"><a href="addCourse.php">ADD COURSE</a></th>
                     </tr>
                 </table>
                 

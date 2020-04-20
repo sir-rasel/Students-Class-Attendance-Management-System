@@ -39,7 +39,7 @@
                     <li><a href="#">Entry Student</a></li>
                     <li><a href="#">Migrate Semester</a></li>
                     <li><a href="../operationFile/teacherList.php">Teacher List</a></li>
-                    <li><a href="#">Course List</a></li>
+                    <li><a href="../operationFile/courseList.php">Course List</a></li>
                     <li><a href="#">Class Schedule</a></li>
                     <li><a href="#">Semester Overall Report</a></li>
                     <li><a class="active" href="../inc/logout.php">Logout</a></li>
