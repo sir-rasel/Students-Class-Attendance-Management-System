@@ -36,7 +36,9 @@
                 <ul>
                     <li><a href="#">Take Attendance</a></li>
                     <li><a href="#">Check Attendance</a></li>
-                    <li><a href="#">Check semester report</a></li>
+                    <li><a href="#">Semester report</a></li>
+                    <li><a href="#">Class schedule</a></li>
+                    <li><a href="#">Course list</a></li>
                     <li style="float:right;"><a class="active" href="../inc/logout.php" >Logout</a></li>
                 </ul>
             </div>

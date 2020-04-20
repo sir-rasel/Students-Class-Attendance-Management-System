@@ -21,6 +21,7 @@
     
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/homeMenu.css">
+    <link rel="stylesheet" href="../css/view.css">
 </head>
 <body>
     
@@ -38,19 +39,56 @@
                     <li><a href="#">Assign Course to Teacher</a></li>
                     <li><a href="#">Entry Student</a></li>
                     <li><a href="#">Migrate Semester</a></li>
-                    <li><a href="../operationFile/teacherList.php">Teacher List</a></li>
+                    <li><a href="">Teacher List</a></li>
                     <li><a href="#">Course List</a></li>
-                    <li><a href="#">Class Schedule</a></li>
                     <li><a href="#">Semester Overall Report</a></li>
                     <li><a class="active" href="../inc/logout.php">Logout</a></li>
                 </ul>
             </div>
             
             <div class="view">
-                <h1>WELCOME,</h1>
                 <?php
-                    $name = strtoupper($_SESSION["instituteName"]);
-                    echo "<h2 style = 'color:blue;'>$name</h2>";
+                    include_once "../inc/databaseConnection.php";
+                    $database = "db".$_SESSION["instituteCode"];
+                
+                    $sql = "use $database;";
+                    $conn->query($sql);
+                
+                    $sql = "select teacherName,teacherDepartment,teacherEmail from teacher_info;";
+                    $result = $conn->query($sql);
+                
+                    if(!$result){
+                        $conn->close();
+                        echo "<script>alert('Error Occured, Try again');";
+                        echo "window.location.href='../homeFile/instituteHome.php';</script>";
+                        die();
+                    }
+                    else if($result->num_rows==0){
+                        echo "<h3>Empty List. No teacher available right now. Register teacher..</h3>";
+                        $conn->close();
+                    }
+                    else{
+                        echo "<table align = 'center'>";
+                        echo "<tr>
+                                <th>SI. NO:</th>
+                                <th>Teacher Name</th>
+                                <th>Teacher Department</th>
+                                <th>Teacher Email</th>
+                            </tr>";
+                        
+                        $idx = 1;
+                        while($row = $result->fetch_assoc()){
+                            echo "<tr>
+                                    <td>".$idx."</td>
+                                    <td>".$row["teacherName"]."</td>
+                                    <td>".$row["teacherDepartment"]."</td>
+                                    <td>".$row["teacherEmail"]."</td>
+                                </tr>";
+                            $idx++;
+                        }
+                        echo "</table>";
+                        $conn->close();
+                    }
                 ?>
             </div>
             
