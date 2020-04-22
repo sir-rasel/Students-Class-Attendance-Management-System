@@ -81,8 +81,8 @@
                                       </tr>";
                                 for($i=0;$i<$numberOfCourse;$i++){
                                     echo "<tr>
-                                            <td><input type='text' name='courseCode[]'></td>
-                                            <td><input type='text' name='courseName[]'></td>
+                                            <td><input type='text' name='courseCode[]' required></td>
+                                            <td><input type='text' name='courseName[]' required></td>
                                           </tr>";
                                 }
                                 echo "<tr>

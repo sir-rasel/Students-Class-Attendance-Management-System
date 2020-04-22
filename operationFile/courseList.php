@@ -35,12 +35,14 @@
             
              <div class="menuBar">
                 <ul>
+                    <li><a href="../homeFile/instituteHome.php">Home</a></li>
                     <li><a href="../registerFile/teacherRegister.php">Register Teacher</a></li>
                     <li><a href="#">Assign Course to Teacher</a></li>
                     <li><a href="#">Entry Student</a></li>
                     <li><a href="#">Migrate Semester</a></li>
-                    <li><a href="teacherList.php">Teacher List</a></li>
+                    <li><a href="#" style="width:114px;">Class Schedule</a></li>
                     <li><a href="">Course List</a></li>
+                    <li><a href="teacherList.php">Teacher List</a></li>
                     <li><a href="#">Semester Overall Report</a></li>
                     <li><a class="active" href="../inc/logout.php">Logout</a></li>
                 </ul>

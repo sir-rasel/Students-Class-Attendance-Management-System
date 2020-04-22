@@ -34,6 +34,7 @@
             
              <div class="menuBar">
                 <ul>
+                    <li><a href="">Home</a></li>
                     <li><a href="#">Check Attendance</a></li>
                     <li><a href="#">Check semester report</a></li>
                     <li style="float:right;"><a class="active" href="../inc/logout.php" >Logout</a></li>
