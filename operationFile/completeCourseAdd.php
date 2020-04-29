@@ -5,6 +5,8 @@
         include "../inc/formValidation.php";
         
         $database = "db".$_SESSION["instituteCode"];
+        $flag = true;
+        
         $sql = "use $database;";
         if($conn->query($sql)!==TRUE) $flag=false;
         

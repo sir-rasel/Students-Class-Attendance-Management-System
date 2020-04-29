@@ -26,7 +26,7 @@
     
     <div class="mainSection">
         <div class="header">
-            <img src="../slideShowImage/login.png" alt="demoImage">
+            <img src="../slideShowImage/register.jpg" alt="demoImage">
             <h2>STUDENT'S CLASS ATTENDANCE MANAGEMENT SYSTEM</h2>
         </div>
         
@@ -37,7 +37,7 @@
                     <li><a href="../homeFile/instituteHome.php">Home</a></li>
                     <li><a href="../registerFile/teacherRegister.php">Register Teacher</a></li>
                     <li><a href="#">Assign Course to Teacher</a></li>
-                    <li><a href="entryStudent.php">Entry Student</a></li>
+                    <li><a href="">Entry Student</a></li>
                     <li><a href="#">Migrate Semester</a></li>
                     <li style="width:146px;"><a href="#">Class Schedule</a></li>
                     <li><a href="teacherList.php">Teacher List</a></li>
@@ -52,8 +52,16 @@
                 <form action="" method="post">
                     <table align = "center">
                         <tr>
-                            <td>Number Of course be added</td>
-                            <td><input type="number" name="numberOfCourse" value = 1 required></td>
+                            <td>Number Of student be added</td>
+                            <td><input type="number" name="numberOfStudent" value = 1 required> Example : 10</td>
+                        </tr>
+                        <tr>
+                            <td>Students Department</td>
+                            <td><input type="text" name="department" required> Example : CSE</td>
+                        </tr>
+                        <tr>
+                            <td>Academic Year</td>
+                            <td><input type="text" name="academicYear" required> Use full form like: 2016-2017</td>
                         </tr>
                         <tr>
                             <th colspan = "2"><input type="submit" name="submit" value="Show Form"></th>
@@ -68,27 +76,46 @@
                     include "../inc/databaseConnection.php";
                     include "../inc/formValidation.php";
         
-                    $numberOfCourse = validateFormData($_POST["numberOfCourse"]);
+                    $numberOfStudent = validateFormData($_POST["numberOfStudent"]);
                     settype($numberOfCourse,"integer");
+                    $department = validateFormData($_POST["department"]);
+                    $academicYear = validateFormData($_POST["academicYear"]);
+                    
+                    echo $department," - ".$academicYear;
                         
                     echo "<div class='registerForm'>";
-                        echo "<form action='completeCourseAdd.php' method='post'>";
+                        echo "<form action='completeStudentEntry.php' method='post'>";
                             echo "<table align ='center'>";
                                 echo "<tr>
-                                        <th colspan = '2'>Course Information</th>
+                                        <th colspan = '4'>Student Information</th>
                                       </tr>";
-                                echo "<tr>
-                                        <th>Course Code</th>
-                                        <th>Course Name</th>
-                                      </tr>";
-                                for($i=0;$i<$numberOfCourse;$i++){
-                                    echo "<tr>
-                                            <td><input type='text' name='courseCode[]' required></td>
-                                            <td><input type='text' name='courseName[]' required></td>
-                                          </tr>";
+                    
+                                for($i=1;$i<=$numberOfStudent;$i++){
+                                    echo "<tr          
+                                           style='height:10px;'>
+                                           <th colspan='4'>Student : $i
+                                           </th>
+                                          </tr>
+                                          <tr>
+                                            <th>Student Name</th>
+                                            <td><input type='text' name='studentName[]' required></td>
+                                            <th>Student Id</th>
+                                            <td><input type='text' name='studentId[]' required></td>
+                                          </tr>
+                                          
+                                          <tr>
+                                            <th>Student Email</th>
+                                            <td><input type='text' name='studentEmail[]'></td>
+                                            <th>Student Mobile</th>
+                                            <td><input type='text' name='studentMobile[]'></td>
+                                          </tr>
+                                          
+                                          <tr>
+                                          <input type='hidden' name='department[]' value = $department>
+                                          <input type='hidden' name='academicYear[]' value = $academicYear></tr>";
                                 }
                                 echo "<tr>
-                                        <th colspan = '2'><input type='submit' name='submit' value='Add'></th>
+                                        <th colspan = '4'><input type='submit' name='submit' value='Entry'></th>
                                       </tr>";
                             echo "</table>";
                         echo "</form>";

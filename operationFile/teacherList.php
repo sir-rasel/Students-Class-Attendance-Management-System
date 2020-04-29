@@ -38,12 +38,13 @@
                     <li><a href="../homeFile/instituteHome.php">Home</a></li>
                     <li><a href="../registerFile/teacherRegister.php">Register Teacher</a></li>
                     <li><a href="#">Assign Course to Teacher</a></li>
-                    <li><a href="#">Entry Student</a></li>
+                    <li><a href="entryStudent.php">Entry Student</a></li>
                     <li><a href="#">Migrate Semester</a></li>
                     <li><a href="#" style="width:114px;">Class Schedule</a></li>
                     <li><a href="courseList.php">Course List</a></li>
                     <li><a href="">Teacher List</a></li>
                     <li><a href="#">Semester Overall Report</a></li>
+                    <li><a href="#">Student List</a></li>
                     <li><a class="active" href="../inc/logout.php">Logout</a></li>
                 </ul>
             </div>
