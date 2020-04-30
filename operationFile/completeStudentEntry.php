@@ -44,7 +44,7 @@
         if($flag == true){
             $conn->close();
             echo "<script>alert('Successfully Entry student information');</script>";
-            echo "<script>window.location.href='teacherList.php';</script>";
+            echo "<script>window.location.href='studentList.php';</script>";
         }
         else{
             echo "Error creating database: " . $conn->error;

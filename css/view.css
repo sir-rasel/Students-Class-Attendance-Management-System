@@ -1,5 +1,11 @@
-table{
+.view{
+    margin: 0px;
+    padding: 0px;
+    min-height: 10px;
+}
+.view table{
     margin-top: 20px;
+    margin-bottom: 20px;
     width: auto;
     border: 1px solid black;
     padding: 5px;
@@ -7,19 +13,20 @@ table{
     border-collapse: collapse;
 }
 
-td{
+.view td{
     padding: 5px;
     border: 1px solid black;
 }
 
 
-th{
+.view th{
     border: 1px solid black;
     padding: 2px;
     color: red;
 }
 
 .view a{
+    width: auto;
     display: inline-block;
     color: white;
     background-color: black;

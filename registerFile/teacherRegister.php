@@ -44,7 +44,7 @@
                     <li><a href="../operationFile/courseList.php">Course List</a></li>
                     <li><a href="../operationFile/teacherList.php">Teacher List</a></li>
                     <li><a href="#">Semester Overall Report</a></li>
-                    <li><a href="#">Student List</a></li>
+                    <li><a href="../operationFile/studentList.php">Student List</a></li>
                     <li><a class="active" href="../inc/logout.php">Logout</a></li>
                 </ul>
             </div>
