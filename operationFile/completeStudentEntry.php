@@ -12,6 +12,7 @@
         
         $department = validateFormData($_POST["department"][0]);
         $academicYear = validateFormData($_POST["academicYear"][0]);
+        $semester = validateFormData($_POST["semester"][0]);
         
         $table = $department."_student_info";
         $sql = "create table if not exists $table
@@ -19,6 +20,7 @@
                  studentId varchar(30) not null primary key,
                  department varchar(20) not null,
                  academicYear varchar(20) not null,
+                 semester varchar(20) not null,
                  studentEmail varchar(100),
                  studentMobile varchar(20)
                 );";
@@ -34,7 +36,7 @@
             $studentMobile = validateFormData($_POST["studentMobile"][$i]);
             
             
-            $sql = "insert into $table(studentName,studentId,department,academicYear,studentEmail,studentMobile) values('$studentName','$studentId','$department','$academicYear','$studentEmail','$studentMobile');";
+            $sql = "insert into $table(studentName,studentId,department,academicYear,semester,studentEmail,studentMobile) values('$studentName','$studentId','$department','$academicYear','$semester','$studentEmail','$studentMobile');";
             if($conn->query($sql)!==TRUE) $flag=false;
         }
         

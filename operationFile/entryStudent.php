@@ -64,6 +64,10 @@
                             <td><input type="text" name="academicYear" required> Use full form like: 2016-2017</td>
                         </tr>
                         <tr>
+                            <td>Semester</td>
+                            <td><input type="text" name="semester" required> Example: 6th</td>
+                        </tr>
+                        <tr>
                             <th colspan = "2"><input type="submit" name="submit" value="Show Form"></th>
                         </tr>
                     </table>
@@ -80,6 +84,7 @@
                     settype($numberOfCourse,"integer");
                     $department = validateFormData($_POST["department"]);
                     $academicYear = validateFormData($_POST["academicYear"]);
+                    $semester = validateFormData($_POST["semester"]);
                     
                     echo $department," - ".$academicYear;
                         
@@ -112,7 +117,8 @@
                                           
                                           <tr>
                                           <input type='hidden' name='department[]' value = $department>
-                                          <input type='hidden' name='academicYear[]' value = $academicYear></tr>";
+                                          <input type='hidden' name='academicYear[]' value = $academicYear>
+                                          <input type='hidden' name='semester[]' value = $semester></tr>";
                                 }
                                 echo "<tr>
                                         <th colspan = '4'><input type='submit' name='submit' value='Entry'></th>
