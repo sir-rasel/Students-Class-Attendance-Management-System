@@ -88,7 +88,7 @@
                     
                     $table = $department."_student_info";
                     
-                    $sql = "select studentId,studentName,department,academicYear,semester,studentEmail,studentMobile from $table order by studentId;";
+                    $sql = "select studentId,studentName,department,academicYear,semester,studentEmail,studentMobile from $table where semester='$semester' order by studentId;";
                     $result = $conn->query($sql);
                     
                     if(!$result){
