@@ -102,6 +102,7 @@
                         $conn->close();
                     }
                     else{
+                        $totalStudent = $result->num_rows;
                         echo "<table align = 'center'>";
                         echo "<tr><th colspan='7'>$department - $semester - ($academicYear)</th></tr>";
                         echo "<tr>
@@ -126,6 +127,10 @@
                                     <td>".$row["studentMobile"]."</td>
                                 </tr>";
                         }
+                        echo "<tr>
+                                <th colspan='7'>Total number of student: $totalStudent</th>
+                            </tr>";
+                        
                         echo "</table>";
                         $conn->close();
                     }

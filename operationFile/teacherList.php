@@ -89,6 +89,9 @@
                                 </tr>";
                             $idx++;
                         }
+                        --$idx;
+                        echo "<tr><th colspan='4'>Total number of teacher: $idx</th></tr>";
+                        
                         echo "</table>";
                         $conn->close();
                     }

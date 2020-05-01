@@ -93,6 +93,9 @@
                                 </tr>";
                             $idx++;
                         }
+                        --$idx;
+                        echo "<tr><th colspan='4'>Total number of Course: $idx</th></tr>";
+                        
                         echo "</table>";
                         $conn->close();
                     }
