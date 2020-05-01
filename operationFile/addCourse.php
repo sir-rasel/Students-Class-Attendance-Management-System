@@ -2,7 +2,7 @@
     session_start();
     if($_SESSION["instituteStatus"]!=true){
         echo "<script>alert('Register or Log in first');";
-        echo "window.location.href='../loginFile/instituteLogin.php';</script>";
+        echo "window.location.href='../index.php';</script>";
         die();
     }
 ?>
