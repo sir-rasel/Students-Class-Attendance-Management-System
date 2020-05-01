@@ -38,7 +38,7 @@
                     <li><a href="../registerFile/teacherRegister.php">Register Teacher</a></li>
                     <li><a href="#">Assign Course to Teacher</a></li>
                     <li><a href="../operationFile/entryStudent.php">Entry Student</a></li>
-                    <li><a href="#">Migrate Semester</a></li>
+                    <li><a href="../operationFile/migrateSemester.php">Migrate Semester</a></li>
                     <li><a href="#" style="width:114px;">Class Schedule</a></li>
                     <li><a href="../operationFile/courseList.php">Course List</a></li>
                     <li><a href="../operationFile/teacherList.php">Teacher List</a></li>

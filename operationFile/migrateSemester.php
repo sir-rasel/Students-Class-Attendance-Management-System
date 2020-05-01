@@ -40,12 +40,12 @@
                     <li><a href="../registerFile/teacherRegister.php">Register Teacher</a></li>
                     <li><a href="#">Assign Course to Teacher</a></li>
                     <li><a href="entryStudent.php">Entry Student</a></li>
-                    <li><a href="migrateSemester.php">Migrate Semester</a></li>
+                    <li><a href="">Migrate Semester</a></li>
                     <li><a href="#" style="width:114px;">Class Schedule</a></li>
                     <li><a href="courseList.php">Course List</a></li>
                     <li><a href="teacherList.php">Teacher List</a></li>
                     <li><a href="#">Semester Overall Report</a></li>
-                    <li><a href="">Student List</a></li>
+                    <li><a href="studentList.php">Student List</a></li>
                     <li><a class="active" href="../inc/logout.php">Logout</a></li>
                 </ul>
             </div>
@@ -62,11 +62,15 @@
                             <td><input type="text" name="academicYear" required> Use full form like: 2016-2017</td>
                         </tr>
                         <tr>
-                            <td>Semester</td>
+                            <td>Present semester</td>
                             <td><input type="text" name="semester" required> Example: 6th</td>
                         </tr>
                         <tr>
-                            <th colspan = "2"><input type="submit" name="submit" value="Show Result"></th>
+                            <td>Migrate to semester</td>
+                            <td><input type="text" name="newSemester" required> Example: 7th, 5th</td>
+                        </tr>
+                        <tr>
+                            <th colspan = "2"><input type="submit" name="submit" value="Migrate"></th>
                         </tr>
                     </table>
                 </form>
@@ -85,10 +89,11 @@
                     $department = validateFormData($_POST["department"]);
                     $academicYear = validateFormData($_POST["academicYear"]);
                     $semester = validateFormData($_POST["semester"]);
+                    $newSemester = validateFormData($_POST["newSemester"]);
                     
                     $table = $department."_student_info";
                     
-                    $sql = "select studentId,studentName,department,academicYear,semester,studentEmail,studentMobile from $table where semester='$semester' order by studentId;";
+                    $sql = "update $table set semester='$newSemester' where semester='$semester' and academicYear='$academicYear';";
                     $result = $conn->query($sql);
                     
                     if(!$result){
@@ -97,38 +102,10 @@
                         echo "window.location.href='';</script>";
                         die();
                     }
-                    else if($result->num_rows==0){
-                        echo "<h3>Empty List. No student available right now. Entry student..</h3>";
-                        $conn->close();
-                    }
                     else{
-                        $totalStudent = $result->num_rows;
                         echo "<table align = 'center'>";
-                        echo "<tr><th colspan='7'>$department - $semester - ($academicYear)</th></tr>";
                         echo "<tr>
-                                <th>Id</th>
-                                <th>Name</th>
-                                <th>Department</th>
-                                <th>Academic Year</th>
-                                <th>Semester</th>
-                                <th>Email</th>
-                                <th>Mobile</th>
-                            </tr>";
-                        
-                        while($row = $result->fetch_assoc()){
-                            
-                            echo "<tr>
-                                    <td>".$row["studentId"]."</td>
-                                    <td>".$row["studentName"]."</td>
-                                    <td>".$row["department"]."</td>
-                                    <td>".$row["academicYear"]."</td>
-                                    <td>".$row["semester"]."</td>
-                                    <td>".$row["studentEmail"]."</td>
-                                    <td>".$row["studentMobile"]."</td>
-                                </tr>";
-                        }
-                        echo "<tr>
-                                <th colspan='7'>Total number of student: $totalStudent</th>
+                                <th>Succefully migrate $department - $semester ($academicYear) TO $department - $newSemester ($academicYear)</th>
                             </tr>";
                         
                         echo "</table>";
