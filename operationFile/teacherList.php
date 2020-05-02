@@ -57,7 +57,7 @@
                     $sql = "use $database;";
                     $conn->query($sql);
                 
-                    $sql = "select teacherName,teacherDepartment,teacherEmail from teacher_info order by teacherDepartment;";
+                    $sql = "select userId, teacherName,teacherDepartment,teacherEmail from teacher_info order by teacherDepartment;";
                     $result = $conn->query($sql);
                 
                     if(!$result){
@@ -74,6 +74,7 @@
                         echo "<table align = 'center'>";
                         echo "<tr>
                                 <th>SI. NO:</th>
+                                <th>UserId</th>
                                 <th>Teacher Name</th>
                                 <th>Teacher Department</th>
                                 <th>Teacher Email</th>
@@ -83,6 +84,7 @@
                         while($row = $result->fetch_assoc()){
                             echo "<tr>
                                     <td>".$idx."</td>
+                                    <td>".$row["userId"]."</td>
                                     <td>".$row["teacherName"]."</td>
                                     <td>".$row["teacherDepartment"]."</td>
                                     <td>".$row["teacherEmail"]."</td>
@@ -90,7 +92,7 @@
                             $idx++;
                         }
                         --$idx;
-                        echo "<tr><th colspan='4'>Total number of teacher: $idx</th></tr>";
+                        echo "<tr><th colspan='5'>Total number of teacher: $idx</th></tr>";
                         
                         echo "</table>";
                         $conn->close();
