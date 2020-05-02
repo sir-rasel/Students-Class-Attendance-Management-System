@@ -57,7 +57,7 @@
                     $sql = "use $database;";
                     $conn->query($sql);
                 
-                    $sql = "select userId, teacherName,teacherDepartment,teacherEmail from teacher_info order by teacherDepartment;";
+                    $sql = "select userId, teacherName,teacherDepartment,teacherEmail,teacherMobile from teacher_info order by teacherDepartment;";
                     $result = $conn->query($sql);
                 
                     if(!$result){
@@ -75,9 +75,10 @@
                         echo "<tr>
                                 <th>SI. NO:</th>
                                 <th>UserId</th>
-                                <th>Teacher Name</th>
-                                <th>Teacher Department</th>
-                                <th>Teacher Email</th>
+                                <th>Name</th>
+                                <th>Department</th>
+                                <th>Email</th>
+                                <th>Mobile</th>
                             </tr>";
                         
                         $idx = 1;
@@ -88,11 +89,12 @@
                                     <td>".$row["teacherName"]."</td>
                                     <td>".$row["teacherDepartment"]."</td>
                                     <td>".$row["teacherEmail"]."</td>
+                                    <td>".$row["teacherMobile"]."</td>
                                 </tr>";
                             $idx++;
                         }
                         --$idx;
-                        echo "<tr><th colspan='5'>Total number of teacher: $idx</th></tr>";
+                        echo "<tr><th colspan='6'>Total number of teacher: $idx</th></tr>";
                         
                         echo "</table>";
                         $conn->close();
