@@ -40,8 +40,8 @@
                     <li><a href="../registerFile/teacherRegister.php">Register Teacher</a></li>
                     <li><a href="assignCourse.php">Assign Course to Teacher</a></li>
                     <li><a href="entryStudent.php">Entry Student</a></li>
-                    <li><a href="">Migrate Semester</a></li>
-                    <li><a href="classSchedule.php" style="width:114px;">Class Schedule</a></li>
+                    <li><a href="migrateSemester.php">Migrate Semester</a></li>
+                    <li><a href="" style="width:114px;">Class Schedule</a></li>
                     <li><a href="courseList.php">Course List</a></li>
                     <li><a href="teacherList.php">Teacher List</a></li>
                     <li><a href="#">Semester Overall Report</a></li>
@@ -54,23 +54,11 @@
                 <form action="" method="post">
                     <table align = "center">
                         <tr>
-                            <td>Students Department</td>
-                            <td><input type="text" name="department" required> Example : CSE</td>
+                            <td>Teacher userId </td>
+                            <td><input type="text" name="userId" required> Example : lutifi-habiba</td>
                         </tr>
                         <tr>
-                            <td>Academic Year</td>
-                            <td><input type="text" name="academicYear" required> Use full form like: 2016-2017</td>
-                        </tr>
-                        <tr>
-                            <td>Present semester</td>
-                            <td><input type="text" name="semester" required> Example: 6th</td>
-                        </tr>
-                        <tr>
-                            <td>Migrate to semester</td>
-                            <td><input type="text" name="newSemester" required> Example: 7th, 5th</td>
-                        </tr>
-                        <tr>
-                            <th colspan = "2"><input type="submit" name="submit" value="Migrate"></th>
+                            <th colspan="2"><input type="submit" name="submit" value="Show Result"></th>
                         </tr>
                     </table>
                 </form>
@@ -86,30 +74,58 @@
                     $sql = "use $database;";
                     $conn->query($sql);
         
-                    $department = validateFormData($_POST["department"]);
-                    $academicYear = validateFormData($_POST["academicYear"]);
-                    $semester = validateFormData($_POST["semester"]);
-                    $newSemester = validateFormData($_POST["newSemester"]);
+                    $userId = validateFormData($_POST["userId"]);
                     
-                    $table = $department."_student_info";
-                    
-                    $sql = "update $table set semester='$newSemester' where semester='$semester' and academicYear='$academicYear';";
+                    $sql = "select teacherName from teacher_info where userId = '$userId';";
                     $result = $conn->query($sql);
+                    $teacherName;
                     
-                    if(!$result){
-                        $conn->close();
-                        echo "<script>alert('Data not found or Error Occured, Try again');";
-                        echo "window.location.href='';</script>";
-                        die();
+                    if(!$result) $flag = false; 
+                    else if($result->num_rows!=0){
+                        $row = $result->fetch_assoc();
+                        $teacherName = $row["teacherName"];
+                        
+                        $sql = "select classTime, course_teacher.courseCode, courseName from course_teacher inner join course_info on course_teacher.courseCode = course_info.courseCode where userId = '$userId' order by classTime;";
+                        $result = $conn->query($sql);
+
+                        if(!$result){
+                            $conn->close();
+                            echo "<script>alert('Data not found or Error Occured, Try again');";
+                            echo "window.location.href='';</script>";
+                            die();
+                        }
+                        else if($result->num_rows==0){
+                            echo "<h3>Empty List. No  course assinged right now. Assigned Course..</h3>";
+                            $conn->close();
+                        }
+                        else{
+                            $totalCourse = $result->num_rows;
+                            echo "<table align = 'center'>";
+                            echo "<tr><th colspan='3'>$teacherName - ($userId)</th></tr>";
+                            echo "<tr>
+                                    <th>Class Time</th>
+                                    <th>Course Code</th>
+                                    <th>Course Name</th>
+                                </tr>";
+
+                            while($row = $result->fetch_assoc()){
+
+                                echo "<tr>
+                                        <td>".$row["classTime"]."</td>
+                                        <td>".$row["courseCode"]."</td>
+                                        <td>".$row["courseName"]."</td>
+                                    </tr>";
+                            }
+                            echo "<tr>
+                                    <th colspan='3'>Total number of course: $totalCourse</th>
+                                </tr>";
+
+                            echo "</table>";
+                            $conn->close();
+                        }
                     }
                     else{
-                        echo "<table align = 'center'>";
-                        echo "<tr>
-                                <th>Succefully migrate $department - $semester ($academicYear) TO $department - $newSemester ($academicYear)</th>
-                            </tr>";
-                        
-                        echo "</table>";
-                        $conn->close();
+                        echo "Invalid userId, not exists";
                     }
                 }
             ?>
