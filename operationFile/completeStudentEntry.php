@@ -47,8 +47,9 @@
             echo "<script>window.location.href='studentList.php';</script>";
         }
         else{
-            echo "Error creating database: " . $conn->error;
             $conn->close();
+            echo "<script>alert('Student already exist or error occured');</script>";
+            echo "<script>window.location.href='studentList.php';</script>";
         }
     }
     else {

@@ -38,7 +38,7 @@
                 <ul>
                     <li><a href="../homeFile/instituteHome.php">Home</a></li>
                     <li><a href="../registerFile/teacherRegister.php">Register Teacher</a></li>
-                    <li><a href="#">Assign Course to Teacher</a></li>
+                    <li><a href="assignCourse.php">Assign Course to Teacher</a></li>
                     <li><a href="entryStudent.php">Entry Student</a></li>
                     <li><a href="migrateSemester.php">Migrate Semester</a></li>
                     <li><a href="#" style="width:114px;">Class Schedule</a></li>

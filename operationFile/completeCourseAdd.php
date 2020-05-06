@@ -28,8 +28,9 @@
             echo "<script>window.location.href='courseList.php';</script>";
         }
         else{
-            echo "Error creating database: " . $conn->error;
             $conn->close();
+            echo "<script>alert('Courses Already exist or error occured');</script>";
+            echo "<script>window.location.href='courseList.php';</script>";
         }
     }
     else {

@@ -36,7 +36,7 @@
                 <ul>
                     <li><a href="../homeFile/instituteHome.php">Home</a></li>
                     <li><a href="../registerFile/teacherRegister.php">Register Teacher</a></li>
-                    <li><a href="assignCourse.php">Assign Course to Teacher</a></li>
+                    <li><a href="">Assign Course to Teacher</a></li>
                     <li><a href="entryStudent.php">Entry Student</a></li>
                     <li><a href="migrateSemester.php">Migrate Semester</a></li>
                     <li style="width:146px;"><a href="#">Class Schedule</a></li>
@@ -52,7 +52,11 @@
                 <form action="" method="post">
                     <table align = "center">
                         <tr>
-                            <td>Number Of course be added</td>
+                            <td>Teacher UserID</td>
+                            <td><input type="text" name="userId" required></td>
+                        </tr>
+                        <tr>
+                            <td>Number of course be assigned</td>
                             <td><input type="number" name="numberOfCourse" value = 1 required></td>
                         </tr>
                         <tr>
@@ -61,34 +65,37 @@
                     </table>
                 </form>
             </div>
-                
-                
+            
             <?php
                 if($_SERVER["REQUEST_METHOD"]=="POST"){
                     include "../inc/databaseConnection.php";
                     include "../inc/formValidation.php";
         
+                    $userId = validateFormData($_POST["userId"]);
                     $numberOfCourse = validateFormData($_POST["numberOfCourse"]);
                     settype($numberOfCourse,"integer");
                         
                     echo "<div class='registerForm'>";
-                        echo "<form action='completeCourseAdd.php' method='post'>";
+                        echo "<form action='completeAssignCourse.php' method='post'>";
                             echo "<table align ='center'>";
                                 echo "<tr>
-                                        <th colspan = '2'>Course Information</th>
+                                        <th colspan = '3'>Course Assignment</th>
                                       </tr>";
                                 echo "<tr>
+                                        <th>Class time</th>
                                         <th>Course Code</th>
                                         <th>Course Name</th>
                                       </tr>";
                                 for($i=0;$i<$numberOfCourse;$i++){
                                     echo "<tr>
+                                            <td><input type='text' name='classTime[]' required></td>
                                             <td><input type='text' name='courseCode[]' required></td>
                                             <td><input type='text' name='courseName[]' required></td>
                                           </tr>";
                                 }
                                 echo "<tr>
-                                        <th colspan = '2'><input type='submit' name='submit' value='Add'></th>
+                                        <input type='hidden' name='userId' value=$userId>
+                                        <th colspan = '3'><input type='submit' name='submit' value='Assign'></th>
                                       </tr>";
                             echo "</table>";
                         echo "</form>";

@@ -36,7 +36,7 @@
                 <ul>
                     <li><a href="../homeFile/instituteHome.php">Home</a></li>
                     <li><a href="../registerFile/teacherRegister.php">Register Teacher</a></li>
-                    <li><a href="#">Assign Course to Teacher</a></li>
+                    <li><a href="assignCourse.php">Assign Course to Teacher</a></li>
                     <li><a href="">Entry Student</a></li>
                     <li><a href="migrateSemester.php">Migrate Semester</a></li>
                     <li style="width:146px;"><a href="#">Class Schedule</a></li>
@@ -130,8 +130,6 @@
             ?>
                 
             </div>
-            
-        </div>
         
     
         <div class="footer">
@@ -144,6 +142,8 @@
                 ?> 
             </p>
         </div>
+        
+    </div>
     
 </body>
 
