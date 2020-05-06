@@ -85,7 +85,7 @@
                         $row = $result->fetch_assoc();
                         $teacherName = $row["teacherName"];
                         
-                        $sql = "select classTime, course_teacher.courseCode, courseName from course_teacher inner join course_info on course_teacher.courseCode = course_info.courseCode where userId = '$userId' order by classTime;";
+                        $sql = "select classTime, department,semester,academicYear,course_teacher.courseCode, courseName from course_teacher inner join course_info on course_teacher.courseCode = course_info.courseCode where userId = '$userId' order by classTime;";
                         $result = $conn->query($sql);
 
                         if(!$result){
@@ -101,9 +101,12 @@
                         else{
                             $totalCourse = $result->num_rows;
                             echo "<table align = 'center'>";
-                            echo "<tr><th colspan='3'>$teacherName - ($userId)</th></tr>";
+                            echo "<tr><th colspan='6'>$teacherName - ($userId)</th></tr>";
                             echo "<tr>
                                     <th>Class Time</th>
+                                    <th>Department</th>
+                                    <th>Semester</th>
+                                    <th>Academic Year</th>
                                     <th>Course Code</th>
                                     <th>Course Name</th>
                                 </tr>";
@@ -112,12 +115,15 @@
 
                                 echo "<tr>
                                         <td>".$row["classTime"]."</td>
+                                        <td>".$row["department"]."</td>
+                                        <td>".$row["semester"]."</td>
+                                        <td>".$row["academicYear"]."</td>
                                         <td>".$row["courseCode"]."</td>
                                         <td>".$row["courseName"]."</td>
                                     </tr>";
                             }
                             echo "<tr>
-                                    <th colspan='3'>Total number of course: $totalCourse</th>
+                                    <th colspan='6'>Total number of course: $totalCourse</th>
                                 </tr>";
 
                             echo "</table>";

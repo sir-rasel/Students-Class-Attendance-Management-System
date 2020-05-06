@@ -60,14 +60,15 @@
                             <td><input type="number" name="numberOfCourse" value = 1 required></td>
                         </tr>
                         <tr>
-                            <th colspan = "2"><input type="submit" name="submit" value="Show Form"></th>
+                            <th><input type="submit" name="submit" value="Assign Course"></th>
+                            <th><input type="submit" name="submit" value="Update Assignment"></th>
                         </tr>
                     </table>
                 </form>
             </div>
             
             <?php
-                if($_SERVER["REQUEST_METHOD"]=="POST"){
+                if($_SERVER["REQUEST_METHOD"]=="POST" and $_POST["submit"]=="Assign Course"){
                     include "../inc/databaseConnection.php";
                     include "../inc/formValidation.php";
         
@@ -79,23 +80,95 @@
                         echo "<form action='completeAssignCourse.php' method='post'>";
                             echo "<table align ='center'>";
                                 echo "<tr>
-                                        <th colspan = '3'>Course Assignment</th>
+                                        <th colspan = '4'>Course Assignment</th>
                                       </tr>";
-                                echo "<tr>
-                                        <th>Class time</th>
-                                        <th>Course Code</th>
-                                        <th>Course Name</th>
-                                      </tr>";
-                                for($i=0;$i<$numberOfCourse;$i++){
-                                    echo "<tr>
+                    
+                                for($i=1;$i<=$numberOfCourse;$i++){
+                                    echo "<tr          
+                                           style='height:10px;'>
+                                           <th colspan='4'>Course : $i
+                                           </th>
+                                          </tr>
+                                          <tr>
+                                            <th>Class Time</th>
                                             <td><input type='text' name='classTime[]' required></td>
-                                            <td><input type='text' name='courseCode[]' required></td>
-                                            <td><input type='text' name='courseName[]' required></td>
-                                          </tr>";
+                                            <th>Department</th>
+                                            <td><input type='text' name='department[]' required></td>
+                                          </tr>
+                                          
+                                          <tr>
+                                            <th>Semester</th>
+                                            <td><input type='text' name='semester[]'></td>
+                                            <th>Academic Year</th>
+                                            <td><input type='text' name='academicYear[]'></td>
+                                          </tr>
+                                          
+                                          <tr>
+                                            <th>Course Code</th>
+                                            <td><input type='text' name='courseCode[]'></td>
+                                            <th>Course Name</th>
+                                            <td><input type='text' name='courseName[]'></td>
+                                          </tr>
+                                          ";
                                 }
                                 echo "<tr>
-                                        <input type='hidden' name='userId' value=$userId>
-                                        <th colspan = '3'><input type='submit' name='submit' value='Assign'></th>
+                                          <input type='hidden' name='userId' value = $userId>
+                                       </tr>
+                                       <tr>
+                                        <th colspan = '4'><input type='submit' name='submit' value='Assign'></th>
+                                      </tr>";
+                            echo "</table>";
+                        echo "</form>";
+                    echo "</div>";
+                }
+                else if($_SERVER["REQUEST_METHOD"]=="POST" and $_POST["submit"]=="Update Assignment"){
+                    include "../inc/databaseConnection.php";
+                    include "../inc/formValidation.php";
+        
+                    $userId = validateFormData($_POST["userId"]);
+                    $numberOfCourse = validateFormData($_POST["numberOfCourse"]);
+                    settype($numberOfCourse,"integer");
+                        
+                    echo "<div class='registerForm'>";
+                        echo "<form action='completeUpdateCourseAssign.php' method='post'>";
+                            echo "<table align ='center'>";
+                                echo "<tr>
+                                        <th colspan = '4'>Course Assignment</th>
+                                      </tr>";
+                    
+                                for($i=1;$i<=$numberOfCourse;$i++){
+                                    echo "<tr          
+                                           style='height:10px;'>
+                                           <th colspan='4'>Course : $i
+                                           </th>
+                                          </tr>
+                                          <tr>
+                                            <th>Class Time</th>
+                                            <td><input type='text' name='classTime[]' required></td>
+                                            <th>Department</th>
+                                            <td><input type='text' name='department[]' required></td>
+                                          </tr>
+                                          
+                                          <tr>
+                                            <th>Semester</th>
+                                            <td><input type='text' name='semester[]'></td>
+                                            <th>Academic Year</th>
+                                            <td><input type='text' name='academicYear[]'></td>
+                                          </tr>
+                                          
+                                          <tr>
+                                            <th>Course Code</th>
+                                            <td><input type='text' name='courseCode[]'></td>
+                                            <th>Course Name</th>
+                                            <td><input type='text' name='courseName[]'></td>
+                                          </tr>
+                                          ";
+                                }
+                                echo "<tr>
+                                          <input type='hidden' name='userId' value = $userId>
+                                       </tr>
+                                       <tr>
+                                        <th colspan = '4'><input type='submit' name='submit' value='Update'></th>
                                       </tr>";
                             echo "</table>";
                         echo "</form>";
