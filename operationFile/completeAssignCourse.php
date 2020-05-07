@@ -22,6 +22,12 @@
                )";
         if($conn->query($sql)!==TRUE) $flag=false;
         
+        $sql = "create table if not exists course_info(
+                courseName varchar(100) not null,
+                courseCode varchar(30) not null primary key
+                );";
+        if($conn->query($sql)!==TRUE) $flag=false;
+        
         $len = count($_POST["courseCode"]);
         $flag = true;
         
@@ -52,12 +58,12 @@
         if($flag == true){
             $conn->close();
             echo "<script>alert('Successfully Assigned Courses');</script>";
-            echo "<script>window.location.href='courseList.php';</script>";
+            echo "<script>window.location.href='classSchedule.php';</script>";
         }
         else{
             $conn->close();
             echo "<script>alert('Class time already assigned or error occured');</script>";
-            echo "<script>window.location.href='courseList.php';</script>";
+            echo "<script>window.location.href='classSchedule.php';</script>";
         }
     }
     else {

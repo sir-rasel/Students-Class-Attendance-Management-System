@@ -61,7 +61,7 @@
                                 courseName varchar(100) not null,
                                 courseCode varchar(30) not null primary key
                             );";
-                    $conn->query($sql);
+                    if($conn->query($sql)!==TRUE) $flag=false;
                 
                     $sql = "select courseCode,courseName from course_info order by courseCode;";
                     $result = $conn->query($sql);

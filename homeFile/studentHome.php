@@ -2,7 +2,7 @@
     session_start();
     if($_SESSION["studentStatus"]!=true){
         echo "<script>alert('Register or Log in first');";
-        echo "window.location.href='../loginFile/studentLogin.php';</script>";
+        echo "window.location.href='../index.php';</script>";
         die();
     }
 ?>

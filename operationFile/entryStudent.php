@@ -40,8 +40,8 @@
                     <li><a href="">Entry Student</a></li>
                     <li><a href="migrateSemester.php">Migrate Semester</a></li>
                     <li style="width:146px;"><a href="classSchedule.php">Class Schedule</a></li>
-                    <li><a href="teacherList.php">Teacher List</a></li>
                     <li><a href="courseList.php">Course List</a></li>
+                    <li><a href="teacherList.php">Teacher List</a></li>
                     <li><a href="#">Semester Overall Report</a></li>
                     <li><a href="studentList.php">Student List</a></li>
                     <li><a class="active" href="../inc/logout.php">Logout</a></li>

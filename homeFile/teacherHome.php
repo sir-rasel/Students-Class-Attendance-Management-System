@@ -2,7 +2,7 @@
     session_start();
     if($_SESSION["teacherStatus"]!=true){
         echo "<script>alert('Register or Log in first');";
-        echo "window.location.href='../loginFile/studentLogin.php';</script>";
+        echo "window.location.href='../index.php';</script>";
         die();
     }
 ?>
@@ -38,8 +38,8 @@
                     <li><a href="#">Take Attendance</a></li>
                     <li><a href="#">Check Attendance</a></li>
                     <li><a href="#">Semester report</a></li>
-                    <li><a href="#">Class schedule</a></li>
-                    <li><a href="#" style="width:90px">Course list</a></li>
+                    <li><a href="../operationFile/teacherClassSchedule.php">Class schedule</a></li>
+                    <li><a href="../operationFile/teacherCourseList.php" style="width:90px">Course list</a></li>
                     <li style="float:right;"><a class="active" href="../inc/logout.php" >Logout</a></li>
                 </ul>
             </div>

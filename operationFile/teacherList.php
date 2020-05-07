@@ -57,6 +57,16 @@
                     $sql = "use $database;";
                     $conn->query($sql);
                 
+                    $sql = "create table if not exists teacher_info(
+                        teacherName varchar(100) not null,
+                        instituteCode varchar(30) not null,
+                        userId varchar(30) not null primary key,
+                        teacherDepartment varchar(100) not null,
+                        teacherEmail varchar(100),
+                        teacherMobile varchar(20)
+                    )";
+                    if ($conn->query($sql) !== TRUE) $flag=false;
+
                     $sql = "select userId, teacherName,teacherDepartment,teacherEmail,teacherMobile from teacher_info order by teacherDepartment;";
                     $result = $conn->query($sql);
                 

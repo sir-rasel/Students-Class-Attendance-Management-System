@@ -30,8 +30,10 @@
             die();
         }
         else{
-            echo "Error creating database: " . $conn->error;
             $conn->close();
+            echo "<script>alert('Error Occured');";
+            echo "window.location.href='instituteLogin.php';</script>";
+            die();
         }
     }
     else {

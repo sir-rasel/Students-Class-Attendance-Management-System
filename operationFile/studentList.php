@@ -87,6 +87,16 @@
                     $semester = validateFormData($_POST["semester"]);
                     
                     $table = $department."_student_info";
+                    $sql = "create table if not exists $table
+                    (studentName varchar(100) not null,
+                    studentId varchar(30) not null primary key,
+                    department varchar(20) not null,
+                    academicYear varchar(20) not null,
+                    semester varchar(20) not null,
+                    studentEmail varchar(100),
+                    studentMobile varchar(20)
+                    );";
+                    if($conn->query($sql)!==TRUE) $flag=false;
                     
                     $sql = "select studentId,studentName,department,academicYear,semester,studentEmail,studentMobile from $table where semester='$semester' order by studentId;";
                     $result = $conn->query($sql);

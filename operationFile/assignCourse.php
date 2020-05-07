@@ -40,8 +40,8 @@
                     <li><a href="entryStudent.php">Entry Student</a></li>
                     <li><a href="migrateSemester.php">Migrate Semester</a></li>
                     <li style="width:146px;"><a href="classSchedule.php">Class Schedule</a></li>
-                    <li><a href="teacherList.php">Teacher List</a></li>
                     <li><a href="courseList.php">Course List</a></li>
+                    <li><a href="teacherList.php">Teacher List</a></li>
                     <li><a href="#">Semester Overall Report</a></li>
                     <li><a href="studentList.php">Student List</a></li>
                     <li><a class="active" href="../inc/logout.php">Logout</a></li>
@@ -53,15 +53,16 @@
                     <table align = "center">
                         <tr>
                             <td>Teacher UserID</td>
-                            <td><input type="text" name="userId" required></td>
+                            <td colspan="2"><input type="text" name="userId" required></td>
                         </tr>
                         <tr>
                             <td>Number of course be assigned</td>
-                            <td><input type="number" name="numberOfCourse" value = 1 required></td>
+                            <td colspan="2"><input type="number" name="numberOfCourse" value = 1 required></td>
                         </tr>
                         <tr>
                             <th><input type="submit" name="submit" value="Assign Course"></th>
                             <th><input type="submit" name="submit" value="Update Assignment"></th>
+                            <th><input type="submit" name="submit" value="Delete Class"></th>
                         </tr>
                     </table>
                 </form>
@@ -169,6 +170,52 @@
                                        </tr>
                                        <tr>
                                         <th colspan = '4'><input type='submit' name='submit' value='Update'></th>
+                                      </tr>";
+                            echo "</table>";
+                        echo "</form>";
+                    echo "</div>";
+                }
+                else if($_SERVER["REQUEST_METHOD"]=="POST" and $_POST["submit"]=="Delete Class"){
+                    include "../inc/databaseConnection.php";
+                    include "../inc/formValidation.php";
+        
+                    $userId = validateFormData($_POST["userId"]);
+                    $numberOfCourse = validateFormData($_POST["numberOfCourse"]);
+                    settype($numberOfCourse,"integer");
+                        
+                    echo "<div class='registerForm'>";
+                        echo "<form action='completeDeleteClassAssign.php' method='post'>";
+                            echo "<table align ='center'>";
+                                echo "<tr>
+                                        <th colspan = '4'>Delete Class</th>
+                                      </tr>";
+                    
+                                for($i=1;$i<=$numberOfCourse;$i++){
+                                    echo "<tr          
+                                           style='height:10px;'>
+                                           <th colspan='4'>Course : $i
+                                           </th>
+                                          </tr>
+                                          <tr>
+                                            <th>Class Time</th>
+                                            <td><input type='text' name='classTime[]' required></td>
+                                            <th>Department</th>
+                                            <td><input type='text' name='department[]' required></td>
+                                          </tr>
+                                          
+                                          <tr>
+                                            <th>Semester</th>
+                                            <td><input type='text' name='semester[]'></td>
+                                            <th>Academic Year</th>
+                                            <td><input type='text' name='academicYear[]'></td>
+                                          </tr>
+                                        ";
+                                }
+                                echo "<tr>
+                                          <input type='hidden' name='userId' value = $userId>
+                                       </tr>
+                                       <tr>
+                                        <th colspan = '4'><input type='submit' name='submit' value='Delete'></th>
                                       </tr>";
                             echo "</table>";
                         echo "</form>";

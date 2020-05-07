@@ -22,40 +22,31 @@
                )";
         if($conn->query($sql)!==TRUE) $flag=false;
         
-        $len = count($_POST["courseCode"]);
+        $len = count($_POST["classTime"]);
         $flag = true;
         
         $userId = validateFormData($_POST["userId"]);
         for($i=0;$i<$len;$i++){
             $classTime = validateFormData($_POST["classTime"][$i]);
             settype($classTime,"integer");
-            $courseCode = validateFormData($_POST["courseCode"][$i]);
-            $courseName = validateFormData($_POST["courseName"][$i]);
             $department = validateFormData($_POST["department"][$i]);
             $semester = validateFormData($_POST["semester"][$i]);
             $academicYear = validateFormData($_POST["academicYear"][$i]);
-            
-            $sql = "insert into course_info(courseCode,courseName) select '$courseCode','$courseName' where not exists (select * from course_info where courseCode = '$courseCode' or courseName = '$courseName');";
-            if($conn->query($sql)!==TRUE) $flag=false;
-
             
             $sql = "select * from course_teacher where classTime = $classTime and userId = '$userId';";
             $result = $conn->query($sql);
             
             if(!$result) $flag=false;
             else if($result->num_rows!=0){
-                $sql = "update course_teacher set courseCode = '$courseCode',department = '$department',semester = '$semester',academicYear = '$academicYear' where userId = '$userId' and classTime = $classTime;";
-                if($conn->query($sql)!==TRUE) $flag=false;
-            }
-            else{
-                $sql = "insert into course_teacher (classTime,department,semester,academicYear,courseCode,userId) values ($classTime,'$department','$semester','$academicYear','$courseCode','$userId')";
+                $sql = "delete from course_teacher where userId = '$userId' and classTime = $classTime and department = '$department' and semester = '$semester' and academicYear = '$academicYear';";
                 if($conn->query($sql)!==TRUE) $flag=false;
             }
         }
                
         if($flag == true){
+            echo $conn->error;
             $conn->close();
-            echo "<script>alert('Successfully Updated Courses');</script>";
+            echo "<script>alert('Successfully Deleted Courses');</script>";
             echo "<script>window.location.href='classSchedule.php';</script>";
         }
         else{
