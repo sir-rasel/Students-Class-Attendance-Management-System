@@ -21,6 +21,7 @@
     
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/homeMenu.css">
+    <link rel="stylesheet" href="../css/registration.css">
 </head>
 <body>
     
@@ -34,7 +35,7 @@
             
              <div class="menuBar">
                 <ul>
-                    <li><a href="">Home</a></li>
+                    <li><a href="../homeFile/instituteHome.php">Home</a></li>
                     <li><a href="../registerFile/teacherRegister.php">Register Teacher</a></li>
                     <li><a href="../operationFile/assignCourse.php">Assign Course to Teacher</a></li>
                     <li><a href="../operationFile/entryStudent.php">Entry Student</a></li>
@@ -44,19 +45,15 @@
                     <li><a href="../operationFile/teacherList.php">Teacher List</a></li>
                     <li><a href="#">Semester Overall Report</a></li>
                     <li><a href="../operationFile/studentList.php">Student List</a></li>
-                    <li><a href="../operationFile/teacherAttendance.php" style="width:192px;">Check Teacher Attendance</a></li>
+                    <li><a href="" style="width:192px;">Check Teacher Attendance</a></li>
                     <li><a class="active" href="../inc/logout.php">Logout</a></li>
                 </ul>
             </div>
             
             <div class="view">
-                <h1>WELCOME,</h1>
-                <?php
-                    $name = strtoupper($_SESSION["instituteName"]);
-                    echo "<h2 style = 'color:blue;'>$name</h2>";
-                ?>
+                <p>This is teacher attendance page</p>
             </div>
-            
+        
             
         </div>
         
@@ -71,6 +68,7 @@
                 ?> 
             </p>
         </div>
+        
     </div>
     
 </body>

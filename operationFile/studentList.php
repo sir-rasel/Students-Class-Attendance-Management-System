@@ -46,6 +46,7 @@
                     <li><a href="teacherList.php">Teacher List</a></li>
                     <li><a href="#">Semester Overall Report</a></li>
                     <li><a href="">Student List</a></li>
+                    <li><a href="teacherAttendance.php" style="width:192px;">Check Teacher Attendance</a></li>
                     <li><a class="active" href="../inc/logout.php">Logout</a></li>
                 </ul>
             </div>
@@ -89,12 +90,13 @@
                     $table = $department."_student_info";
                     $sql = "create table if not exists $table
                     (studentName varchar(100) not null,
-                    studentId varchar(30) not null primary key,
+                    studentId varchar(30) not null,
                     department varchar(20) not null,
                     academicYear varchar(20) not null,
                     semester varchar(20) not null,
                     studentEmail varchar(100),
-                    studentMobile varchar(20)
+                    studentMobile varchar(20),
+                    primary key(studentId,academicYear)
                     );";
                     if($conn->query($sql)!==TRUE) $flag=false;
                     

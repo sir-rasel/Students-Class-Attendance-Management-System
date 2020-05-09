@@ -45,6 +45,7 @@
                     <li><a href="../operationFile/teacherList.php">Teacher List</a></li>
                     <li><a href="#">Semester Overall Report</a></li>
                     <li><a href="../operationFile/studentList.php">Student List</a></li>
+                    <li><a href="../operationFile/teacherAttendance.php" style="width:192px;">Check Teacher Attendance</a></li>
                     <li><a class="active" href="../inc/logout.php">Logout</a></li>
                 </ul>
             </div>
