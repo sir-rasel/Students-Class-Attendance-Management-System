@@ -89,6 +89,7 @@
                         $sql = "create table if not exists
                         course_teacher(
                         classTime int not null,
+                        day varchar(10) not null,
                         department varchar(30) not null,
                         semester varchar(30) not null,
                         academicYear varchar(30) not null,
@@ -98,7 +99,7 @@
                         foreign key(userId) references teacher_info(userId) on update cascade on delete cascade)";
                         if($conn->query($sql)!==TRUE) $flag=false;
                         
-                        $sql = "select classTime, department,semester,academicYear,course_teacher.courseCode, courseName from course_teacher inner join course_info on course_teacher.courseCode = course_info.courseCode where userId = '$userId' order by classTime;";
+                        $sql = "select classTime,day, department,semester,academicYear,course_teacher.courseCode, courseName from course_teacher inner join course_info on course_teacher.courseCode = course_info.courseCode where userId = '$userId' order by classTime;";
                         $result = $conn->query($sql);
 
                         if(!$result){
@@ -114,9 +115,10 @@
                         else{
                             $totalCourse = $result->num_rows;
                             echo "<table align = 'center'>";
-                            echo "<tr><th colspan='6'>$teacherName - ($userId)</th></tr>";
+                            echo "<tr><th colspan='7'>$teacherName - ($userId)</th></tr>";
                             echo "<tr>
                                     <th>Class Time</th>
+                                    <th>Day</th>
                                     <th>Department</th>
                                     <th>Semester</th>
                                     <th>Academic Year</th>
@@ -128,6 +130,7 @@
 
                                 echo "<tr>
                                         <td>".$row["classTime"]."</td>
+                                        <td>".$row["day"]."</td>
                                         <td>".$row["department"]."</td>
                                         <td>".$row["semester"]."</td>
                                         <td>".$row["academicYear"]."</td>
@@ -136,7 +139,7 @@
                                     </tr>";
                             }
                             echo "<tr>
-                                    <th colspan='6'>Total number of course: $totalCourse</th>
+                                    <th colspan='7'>Total number of class: $totalCourse</th>
                                 </tr>";
 
                             echo "</table>";

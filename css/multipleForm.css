@@ -33,3 +33,7 @@ th input{
     font-weight: bold;
     color: white;
 }
+
+td input{
+    width: auto;
+}

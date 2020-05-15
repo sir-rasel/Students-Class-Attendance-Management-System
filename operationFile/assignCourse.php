@@ -85,10 +85,12 @@
                                         <th colspan = '4'>Course Assignment</th>
                                       </tr>";
                     
-                                for($i=1;$i<=$numberOfCourse;$i++){
+                                for($i=0;$i<$numberOfCourse;$i++){
+                                    $dayVal = "day"."$i"."[]";
+                                    $number = $i+1;
                                     echo "<tr          
                                            style='height:10px;'>
-                                           <th colspan='4'>Course : $i
+                                           <th colspan='4'>Course : $number
                                            </th>
                                           </tr>
                                           <tr>
@@ -100,16 +102,27 @@
                                           
                                           <tr>
                                             <th>Semester</th>
-                                            <td><input type='text' name='semester[]'></td>
+                                            <td><input type='text' name='semester[]' required></td>
                                             <th>Academic Year</th>
-                                            <td><input type='text' name='academicYear[]'></td>
+                                            <td><input type='text' name='academicYear[]' required></td>
                                           </tr>
                                           
                                           <tr>
                                             <th>Course Code</th>
-                                            <td><input type='text' name='courseCode[]'></td>
+                                            <td><input type='text' name='courseCode[]' required></td>
                                             <th>Course Name</th>
-                                            <td><input type='text' name='courseName[]'></td>
+                                            <td><input type='text' name='courseName[]' required></td>
+                                          </tr>
+                                          <tr>
+                                            <th>Day</th>
+                                            <td colspan='3'>
+                                                <input type='checkbox' name='$dayVal' value='Sat'/>Sat
+                                                <input type='checkbox' name='$dayVal' value='Sun'/>Sun
+                                                <input type='checkbox' name='$dayVal' value='Mon'/>Mon
+                                                <input type='checkbox' name='$dayVal' value='Tue'/>Tue
+                                                <input type='checkbox' name='$dayVal' value='Wed'/>Wed
+                                                <input type='checkbox' name='$dayVal' value='Thu'/>Thu
+                                            </td>
                                           </tr>
                                           ";
                                 }
@@ -138,10 +151,12 @@
                                         <th colspan = '4'>Course Assignment</th>
                                       </tr>";
                     
-                                for($i=1;$i<=$numberOfCourse;$i++){
+                                for($i=0;$i<$numberOfCourse;$i++){
+                                    $dayVal = "day"."$i"."[]";
+                                    $number = $i+1;
                                     echo "<tr          
                                            style='height:10px;'>
-                                           <th colspan='4'>Course : $i
+                                           <th colspan='4'>Course : $number
                                            </th>
                                           </tr>
                                           <tr>
@@ -153,16 +168,28 @@
                                           
                                           <tr>
                                             <th>Semester</th>
-                                            <td><input type='text' name='semester[]'></td>
+                                            <td><input type='text' name='semester[]' required></td>
                                             <th>Academic Year</th>
-                                            <td><input type='text' name='academicYear[]'></td>
+                                            <td><input type='text' name='academicYear[]' required></td>
                                           </tr>
                                           
                                           <tr>
                                             <th>Course Code</th>
-                                            <td><input type='text' name='courseCode[]'></td>
+                                            <td><input type='text' name='courseCode[]' required></td>
                                             <th>Course Name</th>
-                                            <td><input type='text' name='courseName[]'></td>
+                                            <td><input type='text' name='courseName[]' required></td>
+                                          </tr>
+                                          <tr>
+                                            <th>Day</th>
+                                            <td colspan='3'>
+                                                <input type='checkbox' name='$dayVal' value='Sat'/>Sat
+                                                <input type='checkbox' name='$dayVal' value='Sun'/>Sun
+                                                <input type='checkbox' name='$dayVal' value='Mon'/>Mon
+                                                <input type='checkbox' name='$dayVal' value='Tue'/>Tue
+                                                <input type='checkbox' name='$dayVal' value='Wed'/>Wed
+                                                <input type='checkbox' name='$dayVal' value='Thu'/>Thu
+                                            </td>
+
                                           </tr>
                                           ";
                                 }
@@ -191,10 +218,12 @@
                                         <th colspan = '4'>Delete Class</th>
                                       </tr>";
                     
-                                for($i=1;$i<=$numberOfCourse;$i++){
+                                for($i=0;$i<$numberOfCourse;$i++){
+                                    $dayVal = "day"."$i"."[]";
+                                    $number = $i+1;
                                     echo "<tr          
                                            style='height:10px;'>
-                                           <th colspan='4'>Course : $i
+                                           <th colspan='4'>Course : $number
                                            </th>
                                           </tr>
                                           <tr>
@@ -206,9 +235,20 @@
                                           
                                           <tr>
                                             <th>Semester</th>
-                                            <td><input type='text' name='semester[]'></td>
+                                            <td><input type='text' name='semester[]' required></td>
                                             <th>Academic Year</th>
-                                            <td><input type='text' name='academicYear[]'></td>
+                                            <td><input type='text' name='academicYear[]' required></td>
+                                          </tr>
+                                          <tr>
+                                            <th>Day</th>
+                                            <td colspan='3'>
+                                                <input type='checkbox' name='$dayVal' value='Sat'/>Sat
+                                                <input type='checkbox' name='$dayVal' value='Sun'/>Sun
+                                                <input type='checkbox' name='$dayVal' value='Mon'/>Mon
+                                                <input type='checkbox' name='$dayVal' value='Tue'/>Tue
+                                                <input type='checkbox' name='$dayVal' value='Wed'/>Wed
+                                                <input type='checkbox' name='$dayVal' value='Thu'/>Thu
+                                            </td>
                                           </tr>
                                         ";
                                 }

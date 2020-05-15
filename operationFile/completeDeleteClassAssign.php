@@ -12,6 +12,7 @@
         
         $sql = "create table if not exists course_teacher(
                 classTime int not null,
+                day varchar(10) not null,
                 department varchar(30) not null,
                 semester varchar(30) not null,
                 academicYear varchar(30) not null,
@@ -33,13 +34,17 @@
             $semester = validateFormData($_POST["semester"][$i]);
             $academicYear = validateFormData($_POST["academicYear"][$i]);
             
-            $sql = "select * from course_teacher where classTime = $classTime and userId = '$userId';";
-            $result = $conn->query($sql);
+            $days = $_POST["day$i"];
             
-            if(!$result) $flag=false;
-            else if($result->num_rows!=0){
-                $sql = "delete from course_teacher where userId = '$userId' and classTime = $classTime and department = '$department' and semester = '$semester' and academicYear = '$academicYear';";
-                if($conn->query($sql)!==TRUE) $flag=false;
+            foreach($days as $key=> $value ){
+                $sql = "select * from course_teacher where classTime = $classTime and day = '$value' and userId = '$userId';";
+                $result = $conn->query($sql);
+
+                if(!$result) $flag=false;
+                else if($result->num_rows!=0){
+                    $sql = "delete from course_teacher where userId = '$userId' and classTime = $classTime and day = '$value' and department = '$department' and semester = '$semester' and academicYear = '$academicYear';";
+                    if($conn->query($sql)!==TRUE) $flag=false;
+                }
             }
         }
                

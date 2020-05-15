@@ -12,6 +12,7 @@
         
         $sql = "create table if not exists course_teacher(
                 classTime int not null,
+                day varchar(10) not null,
                 department varchar(30) not null,
                 semester varchar(30) not null,
                 academicYear varchar(30) not null,
@@ -35,21 +36,25 @@
             $semester = validateFormData($_POST["semester"][$i]);
             $academicYear = validateFormData($_POST["academicYear"][$i]);
             
+            $days = $_POST["day$i"];
+            
             $sql = "insert into course_info(courseCode,courseName) select '$courseCode','$courseName' where not exists (select * from course_info where courseCode = '$courseCode' or courseName = '$courseName');";
             if($conn->query($sql)!==TRUE) $flag=false;
 
             
-            $sql = "select * from course_teacher where classTime = $classTime and userId = '$userId';";
-            $result = $conn->query($sql);
+            foreach($days as $key=> $value ){
+                $sql = "select * from course_teacher where classTime = $classTime and day = '$value' and userId = '$userId';";
+                $result = $conn->query($sql);
             
-            if(!$result) $flag=false;
-            else if($result->num_rows!=0){
-                $sql = "update course_teacher set courseCode = '$courseCode',department = '$department',semester = '$semester',academicYear = '$academicYear' where userId = '$userId' and classTime = $classTime;";
-                if($conn->query($sql)!==TRUE) $flag=false;
-            }
-            else{
-                $sql = "insert into course_teacher (classTime,department,semester,academicYear,courseCode,userId) values ($classTime,'$department','$semester','$academicYear','$courseCode','$userId')";
-                if($conn->query($sql)!==TRUE) $flag=false;
+                if(!$result) $flag=false;
+                else if($result->num_rows!=0){
+                    $sql = "update course_teacher set courseCode = '$courseCode',department = '$department',semester = '$semester',academicYear = '$academicYear' where userId = '$userId' and classTime = $classTime and day = '$value';";
+                    if($conn->query($sql)!==TRUE) $flag=false;
+                }
+                else{
+                    $sql = "insert into course_teacher (classTime,day,department,semester,academicYear,courseCode,userId) values ($classTime,'$value','$department','$semester','$academicYear','$courseCode','$userId')";
+                    if($conn->query($sql)!==TRUE) $flag=false;
+                }
             }
         }
                
