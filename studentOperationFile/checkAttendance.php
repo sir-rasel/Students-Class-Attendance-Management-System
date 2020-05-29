@@ -43,10 +43,7 @@
             
             <div class="view">
                 <h1>WELCOME,</h1>
-                <?php
-                    $userId = strtoupper($_SESSION["userId"]);
-                    echo "<h2 style = 'color:blue;'>$userId</h2>";
-                ?>
+                <p>This is attendace page</P>
             </div>
             
             
