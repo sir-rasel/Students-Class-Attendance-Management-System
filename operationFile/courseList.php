@@ -43,7 +43,7 @@
                     <li><a href="classSchedule.php" style="width:114px;">Class Schedule</a></li>
                     <li><a href="">Course List</a></li>
                     <li><a href="teacherList.php">Teacher List</a></li>
-                    <li><a href="#">Semester Overall Report</a></li>
+                    <li><a href="semesterReport.php">Semester Overall Report</a></li>
                     <li><a href="studentList.php">Student List</a></li>
                     <li><a href="teacherAttendance.php" style="width:192px;">Check Teacher Attendance</a></li>
                     <li><a class="active" href="../inc/logout.php">Logout</a></li>

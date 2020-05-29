@@ -21,7 +21,6 @@
     
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/homeMenu.css">
-    <link rel="stylesheet" href="../css/registration.css">
 </head>
 <body>
     
@@ -36,14 +35,14 @@
              <div class="menuBar">
                 <ul>
                     <li><a href="../homeFile/instituteHome.php">Home</a></li>
-                    <li><a href="">Register Teacher</a></li>
+                    <li><a href="../registerFile/teacherRegister.php">Register Teacher</a></li>
                     <li><a href="../operationFile/assignCourse.php">Assign Course to Teacher</a></li>
                     <li><a href="../operationFile/entryStudent.php">Entry Student</a></li>
                     <li><a href="../operationFile/migrateSemester.php">Migrate Semester</a></li>
                     <li><a href="../operationFile/classSchedule.php" style="width:114px;">Class Schedule</a></li>
                     <li><a href="../operationFile/courseList.php">Course List</a></li>
                     <li><a href="../operationFile/teacherList.php">Teacher List</a></li>
-                    <li><a href="../operationFile/semesterReport.php">Semester Overall Report</a></li>
+                    <li><a href="">Semester Overall Report</a></li>
                     <li><a href="../operationFile/studentList.php">Student List</a></li>
                     <li><a href="../operationFile/teacherAttendance.php" style="width:192px;">Check Teacher Attendance</a></li>
                     <li><a class="active" href="../inc/logout.php">Logout</a></li>
@@ -51,50 +50,8 @@
             </div>
             
             <div class="view">
-                <div class="registerForm">
-                    <form action="completeTeacherRegister.php" method="post">
-                        <table align = "center">
-                            <tr>
-                                <th colspan = "2">Teacher Registration Form</th>
-                            </tr>
-                            <tr>
-                                <td>Teacher Name </td>
-                                <td><input type="text" name="teacherName" required></td>
-                            </tr>
-                            <tr>
-                                <td>Teacher Department </td>
-                                <td><input type="text" name="teacherDepartment" required></td>
-                            </tr>
-                            <tr>
-                                <td>Institute code/id </td>
-                                <td><input type="text" name="instituteCode" required></td>
-                            </tr>
-                            <tr>
-                                <td>Teacher e-mail </td>
-                                <td><input type="email" name="teacherEmail"></td>
-                            </tr>
-                            <tr>
-                                <td>Teacher mobile </td>
-                                <td><input type="text" name="teacherMobile"></td>
-                            </tr>
-                            <tr>
-                                <td>UserID </td>
-                                <td><input type="text" name="userId" required></td>
-                            </tr>
-                            <tr>
-                                <td>Password </td>
-                                <td><input type="text" name="password" required></td>
-                            </tr>
-                            <tr>
-                                <td>Confirm Password </td>
-                                <td><input type="text" name="confirmPassword" required></td>
-                            </tr>
-                            <tr>
-                                <th colspan = "2"><input type="submit" name="submit" value="REGISTER"></th>
-                            </tr>
-                        </table>
-                    </form>
-                </div>
+                <h1>WELCOME,</h1>
+                <p>this is semeter report page</p>
             </div>
             
             
