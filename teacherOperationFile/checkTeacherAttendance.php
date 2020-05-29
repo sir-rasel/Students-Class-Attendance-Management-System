@@ -34,7 +34,7 @@
             
              <div class="menuBar">
                 <ul>
-                    <li><a href="">Home</a></li>
+                    <li><a href="../homeFile/teacherHome.php">Home</a></li>
                     <li><a href="../teacherOperationFile/takeStudentAttendance.php">Take Student Attendance</a></li>
                     <li><a href="../teacherOperationFile/checkStudentAttendance.php">Check Student Attendance</a></li>
                     <li><a href="../teacherOperationFile/checkTeacherAttendance.php">Check Teacher Attendance</a></li>
@@ -47,10 +47,7 @@
             
             <div class="view">
                 <h1>WELCOME,</h1>
-                <?php
-                    $userId = strtoupper($_SESSION["userId"]);
-                    echo "<h2 style = 'color:blue;'>$userId</h2>";
-                ?>
+                <p>This is teacher attendance page</p>
             </div>
             
             

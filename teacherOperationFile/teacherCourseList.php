@@ -37,10 +37,10 @@
              <div class="menuBar">
                 <ul>
                     <li><a href="../homeFile/teacherHome.php">Home</a></li>
-                    <li><a href="#">Take Student Attendance</a></li>
-                    <li><a href="#">Check Student Attendance</a></li>
-                    <li><a href="#">Check Teacher Attendance</a></li>
-                    <li><a href="#" style="width:120px;">Semester report</a></li>
+                    <li><a href="../teacherOperationFile/takeStudentAttendance.php">Take Student Attendance</a></li>
+                    <li><a href="../teacherOperationFile/checkStudentAttendance.php">Check Student Attendance</a></li>
+                    <li><a href="../teacherOperationFile/checkTeacherAttendance.php">Check Teacher Attendance</a></li>
+                    <li><a href="../teacherOperationFile/semesterReport.php" style="width:120px;">Semester report</a></li>
                     <li><a href="teacherClassSchedule.php">Class schedule</a></li>
                     <li><a href="teacherCourseList.php" style="width:90px">Course list</a></li>
                     <li style="float:right;"><a class="active" href="../inc/logout.php" >Logout</a></li>
