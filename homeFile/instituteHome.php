@@ -36,15 +36,15 @@
                 <ul>
                     <li><a href="">Home</a></li>
                     <li><a href="../registerFile/teacherRegister.php">Register Teacher</a></li>
-                    <li><a href="../operationFile/assignCourse.php">Assign Course to Teacher</a></li>
-                    <li><a href="../operationFile/entryStudent.php">Entry Student</a></li>
-                    <li><a href="../operationFile/migrateSemester.php">Migrate Semester</a></li>
-                    <li><a href="../operationFile/classSchedule.php" style="width:114px;">Class Schedule</a></li>
-                    <li><a href="../operationFile/courseList.php">Course List</a></li>
-                    <li><a href="../operationFile/teacherList.php">Teacher List</a></li>
-                    <li><a href="../operationFile/semesterReport.php">Semester Overall Report</a></li>
-                    <li><a href="../operationFile/studentList.php">Student List</a></li>
-                    <li><a href="../operationFile/teacherAttendance.php" style="width:192px;">Check Teacher Attendance</a></li>
+                    <li><a href="../instituteOperationFile/assignCourse.php">Assign Course to Teacher</a></li>
+                    <li><a href="../instituteOperationFile/entryStudent.php">Entry Student</a></li>
+                    <li><a href="../instituteOperationFile/migrateSemester.php">Migrate Semester</a></li>
+                    <li><a href="../instituteOperationFile/classSchedule.php" style="width:114px;">Class Schedule</a></li>
+                    <li><a href="../instituteOperationFile/courseList.php">Course List</a></li>
+                    <li><a href="../instituteOperationFile/teacherList.php">Teacher List</a></li>
+                    <li><a href="../instituteOperationFile/semesterReport.php">Semester Overall Report</a></li>
+                    <li><a href="../instituteOperationFile/studentList.php">Student List</a></li>
+                    <li><a href="../instituteOperationFile/teacherAttendance.php" style="width:192px;">Check Teacher Attendance</a></li>
                     <li><a class="active" href="../inc/logout.php">Logout</a></li>
                 </ul>
             </div>
